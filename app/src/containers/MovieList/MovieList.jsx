@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 
 import './movielist.scss'
 
-import thumbnail from '../../assets/movieThumnails/di-tim-nemo.jpg'
-
 const MovieList = () => {
     const [movieData, setMovieData] = useState([])
 
