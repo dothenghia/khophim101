@@ -12,3 +12,15 @@
 - Aside Bar :
     + Hiện phim mới nhất/xem nhìu nhất
 - Footer
+
+
+## Log :
+- 19/4 :
+    + Review
+    + Setup project (Using Bootstrap)
+
+- 20/4 :
+    + Test get API and Render Movie list
+    + Review NextJS (Change to use NextJS)
+    + Setup new project (Using TailwindCSS)
+    + 
