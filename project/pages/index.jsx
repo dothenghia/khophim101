@@ -51,14 +51,15 @@ const Home = ({ movieInfoList , movieData }) => {
 
                 <div className="basis-2/5 lg:basis-1/4 px-4 pt-4 mt-16 h-fit
                                 rounded-md mr-4 border-2 border-[#333d4d]">
-                    <h1 className="text-lg text-[#e2e8f0] font-medium">Xem nhiều</h1>
+                    <h1 className="text-xl text-[#e2e8f0] font-bold">Xem nhiều</h1>
                     <ul>
                         {
                             movieInfoList.map((movieInfo) => {
                                 return (
                                     <li key={movieInfo['slug']}>
                                         <Link href={`/phim/${movieInfo['slug']}`}
-                                              className="my-4 flex flex-row">
+                                              className="my-4 flex flex-row rounded-sm
+                                                        hover:overflow-hidden hover:outline outline-2 outline-[#e5e7eb]">
                                             <img className="w-16 h-16 object-cover"
                                                 src={`https://img.ophim1.com/uploads/movies/${movieInfo['thumb_url']}`}
                                                 alt={movieInfo['origin_name']}/>

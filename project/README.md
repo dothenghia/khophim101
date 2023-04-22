@@ -21,6 +21,8 @@
     #333d4d -> 4
     #e5e7eb -> 5
 
+    #353f4f
+
     - Heading Text : #e2e8f0
     - Subheading Text : #778394
     - Primary : #6366f1

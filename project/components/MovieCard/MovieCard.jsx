@@ -1,15 +1,18 @@
 import Link from "next/link";
 
+// import styles from './moviecard.module.css'
+
 const MovieCard = ({ movieInfo }) => {
     return (
         <Link href={`/phim/${movieInfo['slug']}`}
-              className="w-full h-full relative rounded-md overflow-hidden bg-[#1e293b] shadow-2xl flex flex-col justify-between"
+              className='w-full h-full relative rounded-md overflow-hidden bg-[#1e293b] shadow-2xl flex flex-col justify-between
+                         hover:outline outline-2 outline-[#e5e7eb]'
         >
             <img className="w-full flex-1"
                 src={`https://img.ophim1.com/uploads/movies/${movieInfo['thumb_url']}`}
                 alt={movieInfo['origin_name']} />
 
-            <div className="p-3 h-28 hover:bg-[#333d4d]">
+            <div className="p-3 h-28 ">
                 <h2 className="font-medium text-lg mb-2 text-[#e2e8f0] line-clamp-2">
                     {movieInfo['name']}
                 </h2>
