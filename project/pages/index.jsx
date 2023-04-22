@@ -33,8 +33,9 @@ const Home = ({ movieInfoList , movieData }) => {
             <div id="home" className="container lg:max-w-6xl mx-auto
                                       flex flex-col lg:flex-row
                                       bg-[#161f34] shadow-2xl ">
+
                 <div className="basis-3/5 lg:basis-3/4 p-4">
-                    <h1 className="mb-2 pl-2 py-1 border-l-4 border-[#6366f1] text-2xl text-[#e2e8f0] font-medium">Phim mới cập nhật</h1>
+                    <h1 className="mb-2 pl-2 py-1 border-l-4 border-[#6366f1] heading-text">Phim mới cập nhật</h1>
                     <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                         {
                             movieInfoList.map((movieInfo) => {
@@ -49,8 +50,8 @@ const Home = ({ movieInfoList , movieData }) => {
                     </div>
                 </div>
 
-                <div className="basis-2/5 lg:basis-1/4 px-4 pt-4 mt-16 h-fit
-                                rounded-md mr-4 border-2 border-[#333d4d]">
+                <div className="basis-2/5 lg:basis-1/4 px-4 pt-4 mt-4 lg:mt-16 mx-4 lg:ml-0 h-fit
+                                rounded-md border-2 border-[#333d4d]">
                     <h1 className="text-xl text-[#e2e8f0] font-bold">Xem nhiều</h1>
                     <ul>
                         {

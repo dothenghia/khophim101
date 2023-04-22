@@ -13,40 +13,76 @@ export async function getServerSideProps(context) {
     const data = await res.json()
 
     // Pass data to the page via props
-    return { 
-        props: { 
+    return {
+        props: {
             data
         }
     }
 }
 
+function RenderInformationArray(array) {
+    if (array[0] === '') {
+        return ' N/A'
+    } else {
+        return (
+            array.map((item, index) => {
+                return (
+                    <span key={index}
+                        className="body-text-2">
+                        {` ${item}${(index === array.length - 1) ? '' : ','}`}
+                    </span>
+                )
+            })
+        )
+    }
+}
+
 
 const Movie = ({ data }) => {
+    console.log(data)
+    const movieInfo = data['movie']
+
     return (
         <Layout>
             <Head>
-                <title>{data['movie']['name']} - khophim.net</title>
+                <title>{movieInfo['name']}</title>
             </Head>
 
             {/* ================================================== */}
 
-            <div>
-                <h1 className="text-xl text-red-600 font-bold">
-                    {data['movie']['name']}
-                    <span> ({data['movie']['origin_name']})</span>
-                </h1>
-                
-                <h3>{data['movie']['episode_current']}</h3>
-                <h1>Diễn viên</h1>
-                <ul>
-                    {
-                        data['movie']['actor'].map((actor, index) => {
-                            return (<li key={index}>{actor}</li>)
-                        })
-                    }
-                </ul>
+            <Link href='/' className="text-xl text-blue-500 font-bold">Back to home</Link>
+            <div className="container lg:max-w-4xl mx-auto bg-[#161f34] shadow-2xl">
+                <div className="flex flex-col md:flex-row items-center p-5">
+                    <div className="w-60 rounded-md overflow-hidden">
+                        <img src={movieInfo['thumb_url']} alt={movieInfo['name']} />
+                    </div>
 
-                <Link href='/' className="text-xl text-blue-500 font-bold">Back to home</Link>
+                    <div className="flex-1 pt-4 px-2 md:pt-1 md:px-6">
+                        <h1 className="heading-text">{movieInfo['name']}</h1>
+                        <h2 className="subheading-text">{movieInfo['origin_name']}</h2>
+                        <p className="body-text">Trạng thái : 
+                            <span className="text-blue-400 text-base font-bold"> {movieInfo['episode_current']}</span>
+                        </p>
+                        <p className="body-text">Thời lượng : {movieInfo['time']}</p>
+                        <p className="body-text">Đạo diễn : {RenderInformationArray(movieInfo['director'])}</p>
+                        <p className="body-text">Diễn viên : {RenderInformationArray(movieInfo['actor'])}</p>
+                        <p className="body-text">Thể loại : 
+                            {movieInfo['category'].map((category , index) => {
+                                return (
+                                    <span key={index} className="body-text-2">
+                                        {` ${category['name']}${(index === movieInfo['category'].length - 1) ? '' : ','}`}
+                                    </span>
+                                )
+                            })}
+                        </p>
+                        <p className="body-text">Quốc gia : <span className="body-text-2">{movieInfo['country'][0]['name']}</span></p>
+                        <p className="body-text">Năm sản xuất : <span className="body-text-2">{movieInfo['year']}</span></p>
+                        <p className="body-text">Nội dung :</p>
+                        <span className="body-text" dangerouslySetInnerHTML={{ __html: movieInfo['content'] }}/>
+                        
+                    </div>
+                </div>
+
             </div>
 
         </Layout>
