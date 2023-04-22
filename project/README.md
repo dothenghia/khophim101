@@ -13,6 +13,18 @@
     + Hiện phim mới nhất/xem nhìu nhất
 - Footer
 
+## Style Color
+### Dark mode
+    #0f172a -> 1
+    #161f34 -> 2
+    #1e293b -> 3
+    #333d4d -> 4
+    #e5e7eb -> 5
+
+    - Heading Text : #e2e8f0
+    - Subheading Text : #778394
+    - Primary : #6366f1
+    - 
 
 ## Log :
 - 19/4 :
@@ -29,12 +41,23 @@
     + Split MovieCard into a component
     + Create page [slug].jsx
     + Render Movie info base on slug
-    
     + Gắn Link vào MovieCard
-    + Gắn Link vào Header
+    + Comment
+
+- 22/4 :
+    + Polishing :
+        * Home Page
+        * MovieCard component
+
+        = Hover UX
+        * Movie Information ([slug])
+
+    + Create Header component
+    + Play movie
 
 
 
     + Đổi trang phim
     + Search
     + Link
+    + Dark mode

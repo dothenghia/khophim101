@@ -1,6 +1,3 @@
-import { useRouter } from "next/router";
-import { GetServerSidePropsContext } from "next";
-
 import Head from "next/head";
 import Link from "next/link";
 
@@ -8,6 +5,7 @@ import Layout from "../../components/Layout";
 
 // This gets called on every request
 export async function getServerSideProps(context) {
+    // Get slug in path url
     const { slug } = context.query
 
     // Fetch data from external API
@@ -15,17 +13,19 @@ export async function getServerSideProps(context) {
     const data = await res.json()
 
     // Pass data to the page via props
-    return { props: { data, slug } }
+    return { 
+        props: { 
+            data
+        }
+    }
 }
 
 
-const Movie = ({ data , slug }) => {
-    console.log(slug)
-
+const Movie = ({ data }) => {
     return (
         <Layout>
             <Head>
-                <title>Hehe phim</title>
+                <title>{data['movie']['name']} - khophim.net</title>
             </Head>
 
             {/* ================================================== */}
@@ -38,17 +38,16 @@ const Movie = ({ data , slug }) => {
                 
                 <h3>{data['movie']['episode_current']}</h3>
                 <h1>Diễn viên</h1>
-                {/* <ul>
+                <ul>
                     {
                         data['movie']['actor'].map((actor, index) => {
                             return (<li key={index}>{actor}</li>)
                         })
                     }
-                </ul> */}
+                </ul>
 
                 <Link href='/' className="text-xl text-blue-500 font-bold">Back to home</Link>
             </div>
-
 
         </Layout>
     );
