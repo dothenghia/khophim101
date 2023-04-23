@@ -58,6 +58,8 @@
 
 
     + Đổi trang phim
+    + Thêm server
+    
     + Search
     + Link
     + Dark mode
@@ -68,3 +70,21 @@ khophim (bị trùng)
 khophim101
 mephim
 thichxemphim
+
+episodes = [
+    {
+        server_name : "Vietsub # 1",
+        server_data : [
+            {
+                link : "....",
+                name : "1"
+
+            },
+            {},
+            ...
+        ]
+    },
+    {},
+    {},
+    ...
+]

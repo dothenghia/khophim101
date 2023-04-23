@@ -1,13 +1,13 @@
 import Head from "next/head";
+import Link from "next/link";
 
 import Layout from "../components/Layout";
 import MovieCard from "../components/MovieCard/MovieCard";
-import Link from "next/link";
 
 // This function runs at build time
 export async function getStaticProps() {
     // Use to Fetch external data
-    const res = await fetch('https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=4')
+    const res = await fetch('https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=6')
     const movieData = await res.json()
     const movieInfoList = movieData['items']
 

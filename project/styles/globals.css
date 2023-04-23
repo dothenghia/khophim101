@@ -24,4 +24,11 @@
     .body-text-2 {
         @apply text-sm text-blue-400 mb-2;
     }
+
+    .normal-episode-btn {
+        @apply bg-[#161f34] border-2 border-[#333d4d] hover:bg-[#29354f];
+    }
+    .active-episode-btn {
+        @apply bg-[#4d5a6f] border-2 border-[#333d4d];
+    }
 }
