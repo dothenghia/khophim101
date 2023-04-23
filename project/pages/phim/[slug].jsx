@@ -39,7 +39,7 @@ function RenderInformationArray(array) {
 
 
 const Movie = ({ data }) => {
-    console.log(data)
+    // console.log(data)
     const movieInfo = data['movie']
 
     return (
@@ -50,9 +50,9 @@ const Movie = ({ data }) => {
 
             {/* ================================================== */}
 
-            <Link href='/' className="text-xl text-blue-500 font-bold">Back to home</Link>
-            <div className="container lg:max-w-4xl mx-auto bg-[#161f34] shadow-2xl">
+            <div className="container lg:max-w-6xl mx-auto bg-[#161f34] shadow-2xl">
                 <div className="flex flex-col md:flex-row items-center p-5">
+
                     <div className="w-60 rounded-md overflow-hidden">
                         <img src={movieInfo['thumb_url']} alt={movieInfo['name']} />
                     </div>

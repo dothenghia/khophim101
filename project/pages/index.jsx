@@ -7,7 +7,7 @@ import Link from "next/link";
 // This function runs at build time
 export async function getStaticProps() {
     // Use to Fetch external data
-    const res = await fetch('https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=1')
+    const res = await fetch('https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=4')
     const movieData = await res.json()
     const movieInfoList = movieData['items']
 
@@ -21,12 +21,12 @@ export async function getStaticProps() {
 }
 
 const Home = ({ movieInfoList , movieData }) => {
-    console.log(movieData)
+    // console.log(movieData)
     
     return (
         <Layout>
             <Head>
-                <title>Trang chủ</title>
+                <title>KhoPhim101 | Trang chủ</title>
             </Head>
 
             {/* ================================================== */}

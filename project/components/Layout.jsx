@@ -5,7 +5,7 @@ import Footer from './Footer/Footer'
 
 export default function Layout({ children }) {
     return (
-        <div>
+        <div id='app-container'>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
@@ -17,7 +17,7 @@ export default function Layout({ children }) {
             {/* ============================================ */}
             <Header/>
 
-            <main className='bg-[#0f172a]'>
+            <main className='bg-gray-900 dark:bg-slate-300'>
                 { children }
             </main>
 
