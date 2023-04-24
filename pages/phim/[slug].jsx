@@ -40,16 +40,12 @@ function RenderInformationArray(array) {
 
 
 const Movie = ({ data }) => {
-    // console.log(data)
+    console.log(data)
     const movieInfo = data['movie']
     const episodes = data['episodes'][0]
-    // console.log(episodes['server_data'][0]['link_embed'])
 
     const [currEpisode , setCurrEpisode] = useState(1)
 
-    // const setEpisode = (index) => {
-
-    // }
 
     return (
         <Layout>
@@ -96,25 +92,30 @@ const Movie = ({ data }) => {
                         src={episodes['server_data'][0]['link_embed']}>
                     </iframe>
 
+
+                    
+                    {/* Buttons switch episodes */}
                     <div className="m-4 px-4 pt-2 pb-4 rounded-md border-2 border-[#333d4d]">
                         <h1 className="heading-text text-lg mb-2">{episodes['server_name']} :</h1>
                         {
                             episodes['server_data'].map((episode , index) => {
                                 return (
                                     <button key={index}
-                                            onClick={(index) => {
-                                                console.log(index)
-                                                setCurrEpisode(index+1)
-
+                                            onClick={(e) => {
+                                                setCurrEpisode(e.target.innerHTML)
+                                                console.log(e.target.innerHTML)
+                                                console.log(typeof(index))
+                                                console.log(typeof(currEpisode))
                                             }}
-                                            className={`px-4 py-3 mx-2 rounded-md text-base font-medium text-white 
-                                                        ${(index === currEpisode-1) ? 'active-episode-btn' : 'normal-episode-btn'}`}>
+                                            className={`${(index+1 === currEpisode) ? 'active-btn' : 'normal-btn'} inline-flex`}>
                                         {episode['name']}
                                     </button>
                                 )
                             })
                         }
                     </div>
+
+
                 </div>
 
             </div>

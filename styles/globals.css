@@ -25,10 +25,13 @@
         @apply text-sm text-blue-400 mb-2;
     }
 
-    .normal-episode-btn {
-        @apply bg-[#161f34] border-2 border-[#333d4d] hover:bg-[#29354f];
+    .normal-btn {
+        @apply w-11 h-11 m-1 rounded-lg  flex flex-row justify-center items-center
+               bg-transparent border-2 border-slate-700 text-white
+               hover:bg-slate-700 hover:border-slate-500;
     }
-    .active-episode-btn {
-        @apply bg-[#4d5a6f] border-2 border-[#333d4d];
+    .active-btn {
+        @apply w-11 h-11 m-1 rounded-lg  flex flex-row justify-center items-center
+               bg-slate-500 border-2 border-slate-500 text-white;
     }
 }

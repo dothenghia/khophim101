@@ -17,7 +17,7 @@ export default function Layout({ children }) {
             {/* ============================================ */}
             <Header/>
 
-            <main className='bg-gray-900 dark:bg-slate-300'>
+            <main className='bg-gray-900'>
                 { children }
             </main>
 

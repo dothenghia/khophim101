@@ -15,15 +15,15 @@
 
 ## Style Color
 ### Dark mode
-    #0f172a -> 1
+    #0f172a -> 1 gray-900
     #161f34 -> 2
-    #1e293b -> 3
-    #333d4d -> 4
-    #e5e7eb -> 5
+    #1e293b -> 3 slate-800
+    #333d4d -> 4 slate-600 border trầm
+    #e5e7eb -> 5 gray-200 border sáng
 
-    - Heading Text : #e2e8f0
-    - Subheading Text : #778394
-    - Primary : #6366f1
+    - Heading Text : #e2e8f0 => slate-200
+    - Subheading Text : #778394 ~~> slate-400
+    - Primary : sky-500 == rgb(14 165 233)
     - 
 
 ## Log :
@@ -54,22 +54,23 @@
 - 23/4 :
     + Create Header component
     + Play movie
+    + Deploy
 
+- 24/4 :
+    + Polishing
+        * Đổi màu
 
-
+    + Đổi tập phim
     + Đổi trang phim
     + Thêm server
+    + Split UI into several components
+    + Thêm chức năng Phim Bộ Phim Lẻ ...
+
     
     + Search
-    + Link
     + Dark mode
 
-yeuphim
-iuphim
-khophim (bị trùng)
-khophim101
-mephim
-thichxemphim
+
 
 episodes = [
     {
