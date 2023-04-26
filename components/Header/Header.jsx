@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <div id="header" className="bg-gray-700">
 
-            <div className="container lg:max-w-6xl mx-auto">
+            <div className="container lg:max-w-5xl mx-auto">
                 <nav className="flex items-center justify-between flex-wrap px-3 py-1">
                     <Link href='/' className="flex items-center flex-shrink-0 text-white mr-6 p-1">
                         <Image src={logo} width={36} height={36} alt='Logo' />
@@ -29,18 +29,18 @@ const Header = () => {
 
                     <div id='navbar-menu' className="w-full hidden flex-grow lg:flex lg:items-center lg:w-auto">
                         <div className="text-sm lg:flex-grow">
-                            <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-blue-400 text-base mr-4">
+                            <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-sky-500 text-base mr-4">
                                 Trang chủ
                             </Link>
-                            <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-blue-400 text-base mr-4">
+                            <p className="block mt-4 lg:inline-block lg:mt-0 text-white/40 text-base mr-4 cursor-default">
                                 Phim Bộ
-                            </Link>
-                            <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-blue-400 text-base mr-4">
+                            </p>
+                            <p className="block mt-4 lg:inline-block lg:mt-0 text-white/40 text-base mr-4 cursor-default">
                                 Phim Lẻ
-                            </Link>
-                            <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-blue-400 text-base">
+                            </p>
+                            <p className="block mt-4 lg:inline-block lg:mt-0 text-white/40 text-base cursor-default">
                                 Hoạt hình
-                            </Link>
+                            </p>
                         </div>
                         {/* <div>
                             <Link href="/" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Search</Link>
