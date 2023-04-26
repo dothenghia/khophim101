@@ -44,8 +44,17 @@ const Movie = ({ data }) => {
     const movieInfo = data['movie']
     const episodes = data['episodes'][0]
 
-    const [currEpisode , setCurrEpisode] = useState(1)
+    const [currEpisode , setCurrEpisode] = useState('1')
 
+    const moveToEpisode = (e) => {
+        if (isNaN(e.target.innerHTML) === false) {
+            setCurrEpisode(e.target.innerHTML)
+        }
+        console.log(e.target.innerHTML)
+        console.log(typeof(e.target.innerHTML))
+        console.log(isNaN(e.target.innerHTML))
+        
+    }
 
     return (
         <Layout>
@@ -89,11 +98,11 @@ const Movie = ({ data }) => {
 
                 <div className="pt-10 pb-28">
                     <iframe className="mx-auto w-4/5 h-96"
-                        src={episodes['server_data'][0]['link_embed']}>
+                        allowFullScreen={true}
+                        // src={episodes['server_data'][0]['link_embed']}>
+                        src={episodes['server_data'][parseInt(currEpisode-1, 10)]['link_embed']}>
                     </iframe>
 
-
-                    
                     {/* Buttons switch episodes */}
                     <div className="m-4 px-4 pt-2 pb-4 rounded-md border-2 border-[#333d4d]">
                         <h1 className="heading-text text-lg mb-2">{episodes['server_name']} :</h1>
@@ -101,13 +110,8 @@ const Movie = ({ data }) => {
                             episodes['server_data'].map((episode , index) => {
                                 return (
                                     <button key={index}
-                                            onClick={(e) => {
-                                                setCurrEpisode(e.target.innerHTML)
-                                                console.log(e.target.innerHTML)
-                                                console.log(typeof(index))
-                                                console.log(typeof(currEpisode))
-                                            }}
-                                            className={`${(index+1 === currEpisode) ? 'active-btn' : 'normal-btn'} inline-flex`}>
+                                            onClick={moveToEpisode}
+                                            className={`${((index+1).toString() === currEpisode) ? 'active-btn' : 'normal-btn'} inline-flex`}>
                                         {episode['name']}
                                     </button>
                                 )

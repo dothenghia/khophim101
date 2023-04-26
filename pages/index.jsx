@@ -25,36 +25,21 @@ const Home = ({ movieData }) => {
     const [page, setPage] = useState('1')
     const [movieInfoList, setMovieInfoList] = useState(movieData['items'])
 
-    
     useEffect(() => {
         fetch(`https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=${page}`)
             .then(data => data.json())
             .then(newMovieData => {
                 setMovieInfoList(newMovieData['items'])
             })
-            // .finally(()=> {
-            //     console.log('Done')
-            // })
     }, [page])
 
     const moveToPage = (e) => {
         setPage(e.target.innerHTML)
     }
 
-    const leftButtons = []
-    for (let i = 1; i < 6; i++) {
-        leftButtons.push(
-            <button className={(i.toString() === page) ? 'active-btn' : 'normal-btn'} 
-                    onClick={moveToPage}
-                    key={i}>
-                        {i}
-            </button>
-        )
-    }
-
-    const rightButtons = []
-    for (let i = 15; i <= 20; i++) {
-        rightButtons.push(
+    const buttons = []
+    for (let i = 1; i <= 28; i++) {
+        buttons.push(
             <button className={(i.toString() === page) ? 'active-btn' : 'normal-btn'} 
                     onClick={moveToPage}
                     key={i}>
@@ -93,10 +78,9 @@ const Home = ({ movieData }) => {
 
                     {/* Buttons switch page */}
                     <div>
-                        <div className="mt-10 flex flex-row justify-center">
-                            {leftButtons}
-                            <div className="text-white flex items-end ">...</div>
-                            {rightButtons}
+                        <div className="mt-10 flex flex-row flex-wrap justify-center">
+                            {buttons}
+                            {/* <div className="text-white flex items-end ">...</div> */}
                         </div>
 
                     </div>
