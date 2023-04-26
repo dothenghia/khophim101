@@ -56,7 +56,7 @@ const Movie = ({ data }) => {
     }, [])
 
     const moveToEpisode = (e) => {
-        if (isNaN(e.target.innerHTML) === false) {
+        if (isNaN(e.target.innerHTML) === false && e.target.innerHTML !== "") {
             setCurrEpisode(e.target.innerHTML)
         }
     }
@@ -102,10 +102,15 @@ const Movie = ({ data }) => {
                 </div>
 
                 <div className="pt-10 pb-28">
-                    <iframe className="mx-auto w-4/5 h-96"
-                        allowFullScreen={true}
-                        src={episodes['server_data'][parseInt(currEpisode - 1, 10)]['link_embed']}>
-                    </iframe>
+                    {
+                        (episodes['server_data'][parseInt(currEpisode - 1, 10)]['link_embed'] === "") ?
+                            <p className="heading-text text-center py-4">Phim này hiện tại chưa hỗ trợ</p>
+                        :
+                        <iframe className="mx-auto w-4/5 h-96"
+                            allowFullScreen={true}
+                            src={episodes['server_data'][parseInt(currEpisode - 1, 10)]['link_embed']}>
+                        </iframe>
+                    }
 
                     {/* Buttons switch episodes */}
                     <div className="mx-10 my-5 px-4 pt-2 pb-4 rounded-md border-2 border-[#333d4d]">

@@ -55,7 +55,6 @@ const Home = ({ movieData }) => {
             </Head>
 
             {/* ================================================== */}
-            {console.log('Render')}
             <div id="home" className="container lg:max-w-5xl mx-auto
                                       flex flex-col lg:flex-row
                                       bg-[#161f34] shadow-2xl ">
