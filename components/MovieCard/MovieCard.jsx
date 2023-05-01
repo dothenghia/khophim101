@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-// import styles from './moviecard.module.css'
-
 const MovieCard = ({ movieInfo }) => {
     return (
         <Link href={`/phim/${movieInfo['slug']}`}
@@ -9,7 +7,7 @@ const MovieCard = ({ movieInfo }) => {
                          hover:outline outline-2 outline-gray-200'
         >
             <img className="w-full flex-1"
-                src={`https://img.ophim1.com/uploads/movies/${movieInfo['thumb_url']}`}
+                src={movieInfo['thumb_url']}
                 alt={movieInfo['origin_name']} />
 
             <div className="p-3 h-28">
@@ -20,8 +18,8 @@ const MovieCard = ({ movieInfo }) => {
                     {movieInfo['origin_name']}
                 </p>
             </div>
-            <div className="inline-block absolute top-2 right-2 rounded-full px-3 pt-1 pb-[2px] bg-gradient-to-br from-sky-500 to-indigo-500 text-sm text-slate-100">
-                {movieInfo['year']}
+            <div className="inline-block absolute top-2 right-2 rounded-full px-3 pt-1 pb-[2px] bg-gradient-to-br from-sky-500 to-indigo-500 text-base font-medium text-slate-100">
+                {movieInfo['episode_current']}
             </div>
 
         </Link>

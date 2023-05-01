@@ -1,50 +1,34 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import clientPromise from "../lib/mongodb";
 
 import Layout from "../components/Layout";
 import MovieCard from "../components/MovieCard/MovieCard";
 
-// This function runs at build time
-export async function getStaticProps() {
-    // Use to Fetch external data
-    const res = await fetch('https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=1')
-    const movieData = await res.json()
+// Get data from MongoDB
+export async function getServerSideProps() {
+	const client = await clientPromise;
+	const db = client.db("khophim-demo");
 
-    // The value of the `props` key will be passed to the `Home` component
-    return {
-        props: {
-            movieData
-        },
-    }
+	let movieData = await db.collection("phim").find({}).limit(24).toArray();
+	movieData = JSON.parse(JSON.stringify(movieData));
+
+	return {
+		props: { movieData },
+	};
 }
 
 const Home = ({ movieData }) => {
-    // console.log(movieData)
-
-    const [page, setPage] = useState('1')
-    const [movieInfoList, setMovieInfoList] = useState(movieData['items'])
-
-    useEffect(() => {
-        fetch(`https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=${page}`)
-            .then(data => data.json())
-            .then(newMovieData => {
-                setMovieInfoList(newMovieData['items'])
-            })
-    }, [page])
-
-    const moveToPage = (e) => {
-        setPage(e.target.innerHTML)
-    }
+    console.log(movieData)
 
     const buttons = []
-    for (let i = 1; i <= 28; i++) {
+    for (let i = 1; i <= 4; i++) {
         buttons.push(
-            <button className={(i.toString() === page) ? 'active-btn' : 'normal-btn'} 
-                    onClick={moveToPage}
+            <Link className={(i === 1) ? 'active-btn' : 'normal-btn'} 
+                    href={`/phim-moi/${i}`}
                     key={i}>
                         {i}
-            </button>
+            </Link>
         )
     }
 
@@ -59,16 +43,15 @@ const Home = ({ movieData }) => {
                                       flex flex-col lg:flex-row
                                       bg-[#161f34] shadow-2xl ">
 
-                {/* <div className="basis-3/5 lg:basis-3/4 p-4"> */}
                 <div className="p-4">
                     <h1 className="mb-2 pl-2 py-1 border-l-4 border-sky-500 heading-text">Phim mới cập nhật</h1>
                     <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                         {
-                            movieInfoList.map((movieInfo) => {
+                            movieData.map((movieInfo) => {
                                 return (
                                     <MovieCard
                                         key={movieInfo['slug']}
-                                        movieInfo={movieInfo}
+                                        movieInfo={movieInfo['movie']}
                                     />
                                 )
                             })
@@ -80,9 +63,11 @@ const Home = ({ movieData }) => {
                     <div>
                         <div className="mt-10 flex flex-row flex-wrap justify-center">
                             {buttons}
-                            {/* <div className="text-white flex items-end ">...</div> */}
+                            <div className="text-white flex items-end ">...</div>
+                            <Link className='normal-btn' href={`/phim-moi/10`}>
+                                10
+                            </Link>
                         </div>
-
                     </div>
 
 
