@@ -56,7 +56,7 @@ const PhimMoi = ({ movieData , page}) => {
             </Head>
 
             {/* ================================================== */}
-            <div id="home" className="container lg:max-w-5xl mx-auto
+            <div id="phimmoi" className="container lg:max-w-5xl mx-auto
                                       flex flex-col lg:flex-row
                                       bg-[#161f34] shadow-2xl ">
 
@@ -79,7 +79,7 @@ const PhimMoi = ({ movieData , page}) => {
                     {/* Buttons switch page */}
                     <div>
                         <div className="mt-10 flex flex-row flex-wrap justify-center">
-                            {renderPageButtons(parseInt(page, 10) , 10)}
+                            {renderPageButtons(parseInt(page, 10) , 280)}
                         </div>
                     </div>
 

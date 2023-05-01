@@ -32,6 +32,9 @@ const Header = () => {
                             <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-sky-500 text-base mr-4">
                                 Trang chủ
                             </Link>
+                            <Link href="/tim-kiem" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-sky-500 text-base mr-4">
+                                Tìm kiếm
+                            </Link>
                             <p className="block mt-4 lg:inline-block lg:mt-0 text-white/40 text-base mr-4 cursor-default">
                                 Phim Bộ
                             </p>

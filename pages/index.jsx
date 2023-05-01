@@ -19,7 +19,7 @@ export async function getServerSideProps() {
 }
 
 const Home = ({ movieData }) => {
-    console.log(movieData)
+    // console.log(movieData)
 
     const buttons = []
     for (let i = 1; i <= 4; i++) {
@@ -47,10 +47,10 @@ const Home = ({ movieData }) => {
                     <h1 className="mb-2 pl-2 py-1 border-l-4 border-sky-500 heading-text">Phim mới cập nhật</h1>
                     <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                         {
-                            movieData.map((movieInfo) => {
+                            movieData.map((movieInfo, index) => {
                                 return (
                                     <MovieCard
-                                        key={movieInfo['slug']}
+                                        key={index}
                                         movieInfo={movieInfo['movie']}
                                     />
                                 )
@@ -64,8 +64,8 @@ const Home = ({ movieData }) => {
                         <div className="mt-10 flex flex-row flex-wrap justify-center">
                             {buttons}
                             <div className="text-white flex items-end ">...</div>
-                            <Link className='normal-btn' href={`/phim-moi/10`}>
-                                10
+                            <Link className='normal-btn' href={`/phim-moi/280`}>
+                                280
                             </Link>
                         </div>
                     </div>
