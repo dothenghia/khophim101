@@ -41,10 +41,12 @@ const Home = ({ movieData }) => {
             {/* ================================================== */}
             <div id="home" className="container lg:max-w-5xl mx-auto
                                       flex flex-col lg:flex-row
-                                      bg-[#161f34] shadow-2xl ">
+                                      bg-li-bg-2 dark:bg-da-bg-2 shadow-stone-400 dark:shadow shadow-2xl ">
 
                 <div className="p-4">
-                    <h1 className="mb-2 pl-2 py-1 border-l-4 border-sky-500 heading-text">Phim mới cập nhật</h1>
+                    <h1 className="mb-2 pl-2 py-1 border-l-4 heading-text text-lg md:text-xl lg:text-2xl
+                                text-li-heading dark:text-da-heading
+                                border-li-primary dark:border-da-primary">Phim mới cập nhật</h1>
                     <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                         {
                             movieData.map((movieInfo, index) => {
@@ -63,7 +65,7 @@ const Home = ({ movieData }) => {
                     <div>
                         <div className="mt-10 flex flex-row flex-wrap justify-center">
                             {buttons}
-                            <div className="text-white flex items-end ">...</div>
+                            <div className="text-li-heading dark:text-da-heading font-medium flex items-end ">...</div>
                             <Link className='normal-btn' href={`/phim-moi/280`}>
                                 280
                             </Link>

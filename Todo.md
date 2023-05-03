@@ -60,12 +60,19 @@
 
 - 1/5 :
     + Switch 24 page (Skip + Limit)
-
     + Merge to Khophim101 :
         ~ Connect to MongoDB
         ~ trang-chu/[page].jsx
         ~ Update UI Khophim101
+    + Create Search Page
+    + Delete all 18+ documents in collection
 
+- 3/5 :
+    + Polishing :
+        ~ Theme
+        ~ Loading
+        ~ Most View
+    + Regex Search
 
 [Waiting Queue]
 + Search
