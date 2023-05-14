@@ -11,18 +11,18 @@
 
 @layer components {
     .heading-text {
-        @apply text-2xl text-[#e2e8f0] font-medium;
+        @apply text-2xl text-[#1e202a] dark:text-[#e2e8f0] font-medium;
     }
 
     .subheading-text {
-        @apply text-lg text-[#778394] mb-1;
+        @apply text-lg text-[#63687e] dark:text-[#778394] mb-1;
     }
 
     .body-text {
-        @apply text-sm text-[#e2e8f0] mb-2;
+        @apply text-sm text-slate-700 dark:text-[#e2e8f0] mb-2;
     }
     .body-text-2 {
-        @apply text-sm text-blue-400 mb-2;
+        @apply text-sm text-sky-500 dark:text-blue-400 mb-2;
     }
 
     .normal-btn {

@@ -5,7 +5,7 @@ import Footer from './Footer/Footer'
 import { useState } from 'react';
 
 export default function Layout({ children }) {
-    const [darkMode, setDarkMode] = useState(true)
+    const [darkMode, setDarkMode] = useState(false)
 
     return (
         <div id='app-container' className={darkMode && 'dark'}>

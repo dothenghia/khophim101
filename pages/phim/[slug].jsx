@@ -69,7 +69,7 @@ const Movie = ({ data }) => {
 
             {/* ================================================== */}
 
-            <div className="container lg:max-w-5xl mx-auto bg-[#161f34] shadow-2xl">
+            <div className="container lg:max-w-5xl mx-auto bg-li-bg-2 dark:bg-da-bg-2 shadow-stone-400 dark:shadow shadow-2xl">
                 <div className="flex flex-col md:flex-row items-center p-5">
 
                     <div className="w-60 rounded-md overflow-hidden">
