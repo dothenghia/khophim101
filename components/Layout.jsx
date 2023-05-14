@@ -5,10 +5,11 @@ import Footer from './Footer/Footer'
 import { useState } from 'react';
 
 export default function Layout({ children }) {
-    const [darkMode, setDarkMode] = useState(false)
+    const [darkMode, setDarkMode] = useState(true)
 
     return (
         <div id='app-container' className={darkMode && 'dark'}>
+        {/* <div id='app-container'> */}
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta

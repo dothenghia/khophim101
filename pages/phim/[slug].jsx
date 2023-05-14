@@ -106,7 +106,7 @@ const Movie = ({ data }) => {
                         (episodes['server_data'][parseInt(currEpisode - 1, 10)]['link_embed'] === "") ?
                             <p className="heading-text text-center py-4">Phim này hiện tại chưa hỗ trợ</p>
                         :
-                        <iframe className="mx-auto w-4/5 h-96"
+                        <iframe className="mx-auto w-full h-60 md:w-4/5 lg:w-5/6 md:h-96"
                             allowFullScreen={true}
                             src={episodes['server_data'][parseInt(currEpisode - 1, 10)]['link_embed']}>
                         </iframe>

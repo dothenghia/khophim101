@@ -77,16 +77,22 @@
         + Most View
     - Regex Search
 
-### 4->13/5 :
-    Final Exam + 'I Need Healing'
+### 4->14/5 :
+    Final Exam -> 'I Need Healing' -> Kick-off
 
 ---
 
-### 14/5 :
+### 15/5 :
     - Review
-    - Add Theme button
-    - Responsive Iframe for Mobile
-    - Query movie
+    - Reformat database (Solution 1)
+    
+- Add Theme button
+- Add 'Most View Component'
+- Responsive Iframe for Mobile
+- Add subpage [tap] to [phim]
+  (the index.jsx of [phim] is the introduction page)
+- Add 'Xem thêm' to introduction part
+- Query movie
 
 ## Waiting Queue 🤌🤧🐢🥰
 + Improve Fetching performance :

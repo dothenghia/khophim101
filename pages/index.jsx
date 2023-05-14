@@ -10,7 +10,7 @@ export async function getServerSideProps() {
 	const client = await clientPromise;
 	const db = client.db("khophim-demo");
 
-	let movieData = await db.collection("phim").find({}).limit(24).toArray();
+	let movieData = await db.collection("phim1").find({}).limit(24).toArray();
 	movieData = JSON.parse(JSON.stringify(movieData));
 
 	return {
@@ -53,7 +53,7 @@ const Home = ({ movieData }) => {
                                 return (
                                     <MovieCard
                                         key={index}
-                                        movieInfo={movieInfo['movie']}
+                                        movieInfo={movieInfo}
                                     />
                                 )
                             })
