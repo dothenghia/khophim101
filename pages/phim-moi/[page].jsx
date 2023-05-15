@@ -90,7 +90,7 @@ const PhimMoi = ({ movieData , page}) => {
                     {/* Buttons switch page */}
                     <div>
                         <div className="mt-10 flex flex-row flex-wrap justify-center">
-                            {renderPageButtons(parseInt(page, 10) , 96)}
+                            {renderPageButtons(parseInt(page, 10) , 95)}
                         </div>
                     </div>
 
