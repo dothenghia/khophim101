@@ -84,7 +84,9 @@
 
 ### 15/5 :
     - Review
-    - Reformat database (Solution 1)
+    - Improve Fetching performance :
+        + getStaticProps
+        + Reformat database Document
     
 - Add Theme button
 - Add 'Most View Component'
@@ -96,16 +98,15 @@
 
 ## Waiting Queue 🤌🤧🐢🥰
 + Improve Fetching performance :
-    ~ Solution 1 : Split database into several small collections (~500 movies/collection)
-                And reformat database Document (Remove redundant information)
-
+    ~ Solution 1 : getStaticProps , reformat database Document (Remove redundant information)
+<!-- 
     ~ Solution 2 : Live Fetching from raw database 
                 (Need to Trade-off Time for Feature)
                     - 'year'         + 'current_episode'
                     - fast           + filter 18+
                     - live update
 
-    ~ Solution 3 : ...
+    ~ Solution 3 : ... -->
 
 
 + Thêm chức năng Phim Bộ Phim Lẻ ...

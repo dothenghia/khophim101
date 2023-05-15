@@ -6,11 +6,11 @@ import Layout from "../components/Layout";
 import MovieCard from "../components/MovieCard/MovieCard";
 
 // Get data from MongoDB
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const client = await clientPromise;
-	const db = client.db("khophim-demo");
+	const db = client.db("khophim-db");
 
-	let movieData = await db.collection("phim1").find({}).limit(24).toArray();
+	let movieData = await db.collection("phim").find({}).limit(24).toArray();
 	movieData = JSON.parse(JSON.stringify(movieData));
 
 	return {
@@ -35,7 +35,7 @@ const Home = ({ movieData }) => {
     return (
         <Layout>
             <Head>
-                <title>KhoPhim101 | Trang chủ</title>
+                <title>Trang chủ | KhoPhim101</title>
             </Head>
 
             {/* ================================================== */}
@@ -67,7 +67,7 @@ const Home = ({ movieData }) => {
                             {buttons}
                             <div className="text-li-heading dark:text-da-heading font-medium flex items-end ">...</div>
                             <Link className='normal-btn' href={`/phim-moi/280`}>
-                                280
+                                50
                             </Link>
                         </div>
                     </div>
