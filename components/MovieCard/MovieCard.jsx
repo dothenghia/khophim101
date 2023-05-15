@@ -9,7 +9,7 @@ const MovieCard = ({ movieInfo }) => {
                         bg-li-bg-3 dark:bg-da-bg-3'
                         
         >
-            <img className="w-full flex-1 sm:flex-none sm:h-[440px] md:h-[370px]"
+            <img className="w-full flex-1 sm:flex-none sm:h-[430px] md:h-[350px]"
                 src={movieInfo['thumb_url']}
                 alt={movieInfo['origin_name']} />
 

@@ -67,7 +67,7 @@ const Home = ({ movieData }) => {
                             {buttons}
                             <div className="text-li-heading dark:text-da-heading font-medium flex items-end ">...</div>
                             <Link className='normal-btn' href={`/phim-moi/280`}>
-                                50
+                                96
                             </Link>
                         </div>
                     </div>
