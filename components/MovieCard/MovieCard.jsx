@@ -7,23 +7,24 @@ const MovieCard = ({ movieInfo }) => {
                         hover:outline outline-2 
                         outline-gray-800 dark:outline-gray-200
                         bg-li-bg-3 dark:bg-da-bg-3'
-                        
         >
-            <img className="w-full flex-1 sm:flex-none sm:h-[430px] md:h-[350px]"
+            <img className="w-full flex-1 sm:flex-none sm:h-[430px] md:h-[250px] lg:h-[250px] xl:h-[280px]"
                 src={movieInfo['thumb_url']}
-                alt={movieInfo['origin_name']} />
+                alt={movieInfo['slug']} />
 
-            <div className="p-3 h-28">
-                <h2 className="font-medium text-lg mb-2 text-li-heading dark:text-da-heading line-clamp-2">
+            <div className="p-[10px] h-24">
+                <h2 className="text-base font-medium mb-2 text-li-heading dark:text-da-heading line-clamp-2">
                     {movieInfo['name']}
                 </h2>
-                <p className="text-md text-li-subheading dark:text-da-subheading line-clamp-1">
+                <p className="text-sm text-li-subheading dark:text-da-subheading line-clamp-1">
                     {movieInfo['origin_name']}
                 </p>
             </div>
-            <div className="absolute top-2 right-2 rounded-full bg-gradient-to-br from-sky-500 to-indigo-500 text-slate-100
-                            text-xs px-3 pt-1 pb-[2px] font-medium
-                            sm:text-sm md:text-base ">
+
+            
+            <div className="absolute top-2 right-2 rounded-full bg-gradient-to-br from-sky-500 to-indigo-600 text-slate-100
+                            text-xs px-2 pt-1 pb-[2px]
+                            sm:text-sm md:text-sm">
                 {movieInfo['episode_current']}
             </div>
 

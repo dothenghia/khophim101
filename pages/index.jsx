@@ -7,31 +7,18 @@ import MovieCard from "../components/MovieCard/MovieCard";
 
 // Get data from MongoDB
 export async function getStaticProps() {
-	const client = await clientPromise;
-	const db = client.db("khophim-db");
+    const client = await clientPromise;
+    const db = client.db("khophim-db");
 
-	let movieData = await db.collection("phim").find({}).limit(24).toArray();
-	movieData = JSON.parse(JSON.stringify(movieData));
+    let movieData = await db.collection("phim").find({}).limit(8).toArray();
+    movieData = JSON.parse(JSON.stringify(movieData));
 
-	return {
-		props: { movieData },
-	};
+    return {
+        props: { movieData },
+    };
 }
 
-const Home = ({ movieData }) => {
-    // console.log(movieData)
-
-    const buttons = []
-    for (let i = 1; i <= 4; i++) {
-        buttons.push(
-            <Link className={(i === 1) ? 'active-btn' : 'normal-btn'} 
-                    href={`/phim-moi/${i}`}
-                    key={i}>
-                        {i}
-            </Link>
-        )
-    }
-
+const HomePage = ({ movieData }) => {
     return (
         <Layout>
             <Head>
@@ -39,15 +26,13 @@ const Home = ({ movieData }) => {
             </Head>
 
             {/* ================================================== */}
-            <div id="home" className="container lg:max-w-5xl mx-auto
-                                      flex flex-col lg:flex-row
-                                      bg-li-bg-2 dark:bg-da-bg-2 shadow-stone-400 dark:shadow shadow-2xl ">
+            <div id="home">
 
-                <div className="p-4">
-                    <h1 className="mb-2 pl-2 py-1 border-l-4 heading-text text-lg md:text-xl lg:text-2xl
-                                text-li-heading dark:text-da-heading
-                                border-li-primary dark:border-da-primary">Phim mới cập nhật</h1>
-                    <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="mt-5 pb-8 border-b-2 border-li-border-dark dark:border-da-border-dark">
+                    <h1 className="page-title">
+                        PHIM MỚI CẬP NHẬT
+                    </h1>
+                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
                         {
                             movieData.map((movieInfo, index) => {
                                 return (
@@ -60,24 +45,166 @@ const Home = ({ movieData }) => {
                         }
                     </div>
 
+                    <div className="mt-8 pr-4 lg:pr-2 flex flex-row justify-end">
+                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                            href='/phim-moi/1'>
+                            Xem thêm
+                            <span className="pl-1 inline-flex flex-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16"><path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" /></svg>
+                            </span>
+                        </Link>
+                    </div>
+                </div>
 
-                    {/* Buttons switch page */}
-                    <div>
-                        <div className="mt-10 flex flex-row flex-wrap justify-center">
-                            {buttons}
-                            <div className="text-li-heading dark:text-da-heading font-medium flex items-end ">...</div>
-                            <Link className='normal-btn' href={`/phim-moi/280`}>
-                                95
-                            </Link>
-                        </div>
+
+                <div className="mt-5 pb-8 border-b-2 border-li-border-dark dark:border-da-border-dark">
+                    <h1 className="page-title">
+                        PHIM CHIẾU RẠP
+                    </h1>
+                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                        {
+                            movieData.map((movieInfo, index) => {
+                                return (
+                                    <MovieCard
+                                        key={index}
+                                        movieInfo={movieInfo}
+                                    />
+                                )
+                            })
+                        }
                     </div>
 
-
+                    <div className="mt-6 pr-4 lg:pr-2 flex flex-row justify-end">
+                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                            href='/phim-moi/1'>
+                            Xem thêm
+                            <span className="pl-1 inline-flex flex-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16"><path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" /></svg>
+                            </span>
+                        </Link>
+                    </div>
                 </div>
+
+
+                <div className="mt-5 pb-8 border-b-2 border-li-border-dark dark:border-da-border-dark">
+                    <h1 className="page-title">
+                        PHIM LẺ
+                    </h1>
+                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                        {
+                            movieData.map((movieInfo, index) => {
+                                return (
+                                    <MovieCard
+                                        key={index}
+                                        movieInfo={movieInfo}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
+
+                    <div className="mt-6 pr-4 lg:pr-2 flex flex-row justify-end">
+                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                            href='/phim-moi/1'>
+                            Xem thêm
+                            <span className="pl-1 inline-flex flex-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16"><path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" /></svg>
+                            </span>
+                        </Link>
+                    </div>
+                </div>
+
+
+                <div className="mt-5 pb-8 border-b-2 border-li-border-dark dark:border-da-border-dark">
+                    <h1 className="page-title">
+                        PHIM BỘ
+                    </h1>
+                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                        {
+                            movieData.map((movieInfo, index) => {
+                                return (
+                                    <MovieCard
+                                        key={index}
+                                        movieInfo={movieInfo}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
+
+                    <div className="mt-6 pr-4 lg:pr-2 flex flex-row justify-end">
+                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                            href='/phim-moi/1'>
+                            Xem thêm
+                            <span className="pl-1 inline-flex flex-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16"><path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" /></svg>
+                            </span>
+                        </Link>
+                    </div>
+                </div>
+
+
+                <div className="mt-5 pb-8 border-b-2 border-li-border-dark dark:border-da-border-dark">
+                    <h1 className="page-title">
+                        PHIM HOẠT HÌNH
+                    </h1>
+                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                        {
+                            movieData.map((movieInfo, index) => {
+                                return (
+                                    <MovieCard
+                                        key={index}
+                                        movieInfo={movieInfo}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
+
+                    <div className="mt-6 pr-4 lg:pr-2 flex flex-row justify-end">
+                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                            href='/phim-moi/1'>
+                            Xem thêm
+                            <span className="pl-1 inline-flex flex-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16"><path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" /></svg>
+                            </span>
+                        </Link>
+                    </div>
+                </div>
+
+
+                <div className="mt-5 pb-8">
+                    <h1 className="page-title">
+                        TV SHOW
+                    </h1>
+                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                        {
+                            movieData.map((movieInfo, index) => {
+                                return (
+                                    <MovieCard
+                                        key={index}
+                                        movieInfo={movieInfo}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
+
+                    <div className="mt-6 pr-4 lg:pr-2 flex flex-row justify-end">
+                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                            href='/phim-moi/1'>
+                            Xem thêm
+                            <span className="pl-1 inline-flex flex-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16"><path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" /></svg>
+                            </span>
+                        </Link>
+                    </div>
+                </div>
+
 
             </div>
         </Layout>
     );
 };
 
-export default Home;
+export default HomePage;

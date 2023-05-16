@@ -84,9 +84,26 @@
 
 ### 15/5 :
     - Review
-    - Improve Fetching performance :
+    - Improve Fetching performance [NOT WORK !!!]
         + getStaticProps
         + Reformat database Document
+    - POLISHING :
+        + Làm gọn code
+        + Split Layout
+
+### 16/5 :
+    - POLISHING :
+        + Làm gọn code
+        + Split Layout
+        + Add Components to HomePage
+
+        
+        + Theme :
+            ~ tailwind.config
+            ~ global.css
+            ~ những chỗ riêng lẻ
+        + Header :
+            ~ 
     
 - Add Theme button
 - Add 'Most View Component'

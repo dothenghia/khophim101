@@ -10,6 +10,22 @@
 
 
 @layer components {
+    /* ======= PAGE STYLE ======= */
+    .page-container {
+        @apply container xl:max-w-6xl mx-auto
+               bg-li-bg-2 dark:bg-da-bg-2
+               shadow-stone-400 dark:shadow shadow-2xl;
+    }
+    .page-title {
+        @apply mb-3 pl-2 py-1 border-l-4 
+               font-medium text-lg md:text-xl
+               text-li-heading dark:text-da-heading
+               border-li-primary dark:border-da-primary;
+    }
+
+
+    /* ======= TEXT STYLE ======= */
+
     .heading-text {
         @apply text-2xl text-[#1e202a] dark:text-[#e2e8f0] font-medium;
     }
