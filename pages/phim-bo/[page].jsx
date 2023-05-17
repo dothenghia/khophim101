@@ -5,8 +5,8 @@ import clientPromise from "../../lib/mongodb";
 import Layout from "../../components/Layout";
 import MovieCard from "../../components/MovieCard/MovieCard";
 
-// PHIM MỚI CẬP NHẬT 2327
-// Total pages : 95
+// PHIM BỘ 741
+// Total pages : 29
 
 export async function getServerSideProps(context) {
     const { page } = context.query
@@ -15,7 +15,7 @@ export async function getServerSideProps(context) {
     const client = await clientPromise;
     const db = client.db("khophim-db");
 
-    let movieData = await db.collection("phim").find({}).skip(skip).limit(24).toArray();
+    let movieData = await db.collection("phim").find({"type" : "series" , "chieurap" : false }).skip(skip).limit(24).toArray();
     movieData = JSON.parse(JSON.stringify(movieData));
 
     return {
@@ -35,7 +35,7 @@ const renderPageButtons = (page, n) => {
             }
             buttons.push(
                 <Link className={(i == page) ? 'active-btn' : 'normal-btn'}
-                    href={`/phim-moi/${i}`}
+                    href={`/phim-bo/${i}`}
                     key={i}>
                     {i}
                 </Link>
@@ -48,19 +48,19 @@ const renderPageButtons = (page, n) => {
     return buttons
 }
 
-const PhimMoi = ({ movieData, page }) => {
+const PhimBo = ({ movieData, page }) => {
     return (
         <Layout>
             <Head>
-                <title>Phim mới cập nhật - Trang {page} | KhoPhim101</title>
+                <title>Phim bộ - Trang {page} | KhoPhim101</title>
             </Head>
 
             {/* ================================================== */}
-            <div id="phimmoi">
+            <div id="phimbo">
 
                 <div className="mt-5">
                     <h1 className="page-title">
-                        PHIM MỚI CẬP NHẬT - Trang {page}
+                        PHIM BỘ - Trang {page}
                     </h1>
 
                     <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
@@ -83,7 +83,7 @@ const PhimMoi = ({ movieData, page }) => {
                 {/* Buttons switch page */}
                 <div>
                     <div className="mt-10 flex flex-row flex-wrap justify-center">
-                        {renderPageButtons(parseInt(page, 10), 95)}
+                        {renderPageButtons(parseInt(page, 10), 29)}
                     </div>
                 </div>
 
@@ -92,4 +92,4 @@ const PhimMoi = ({ movieData, page }) => {
     );
 };
 
-export default PhimMoi;
+export default PhimBo;

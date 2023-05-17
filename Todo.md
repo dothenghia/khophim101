@@ -103,13 +103,15 @@
     - Get data as category
     - Add Theme button
 
+    - Create phim-chieu-rap, phim-le, phim-bo, hoat-hinh
+    - Polishing SearchPage
 
-
-- Add data to 'Most View' Component
+    - Add data to 'Most View' Component
+    - Query movie
+    
 - Add subpage [tap] to [phim]
   (the index.jsx of [phim] is the introduction page)
 - Add 'Xem thêm' to introduction part
-- Query movie
 
 ## Waiting Queue 🤌🤧🐢🥰
 + Improve Fetching performance :
