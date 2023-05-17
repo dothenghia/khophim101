@@ -3,7 +3,7 @@ import Link from "next/link";
 const MovieCard = ({ movieInfo }) => {
     return (
         <Link href={`/phim/${movieInfo['slug']}`}
-              className='w-full relative rounded-md overflow-hidden shadow-2xl dark:shadow-none flex flex-col justify-between
+              className='w-full relative rounded-md overflow-hidden drop-shadow-2xl shadow-md dark:shadow-sm dark:shadow-black dark:drop-shadow-none flex flex-col justify-between
                         hover:outline outline-[2.5px]
                         outline-gray-800 dark:outline-gray-300
                         bg-li-bg-3 dark:bg-da-bg-3'

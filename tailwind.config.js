@@ -10,14 +10,14 @@ module.exports = {
 		extend: {
 			colors: {
 				'li-header': '#ededed',
-				'li-bg-1': '#fefefe',
-				'li-bg-2': '#f2f2f2',
-				'li-bg-3': '#f0f2fa',
-				'li-border': '#dbdeeb',
+				'li-bg-1': '#e9ebee',
+				'li-bg-2': '#f7f7f7',
+				'li-bg-3': '#ffffff',
+				'li-border': '#c9c9c9',
 
-				'li-heading': '#1e202a',
-				'li-subheading': '#63687e',
-				'li-text': '#63687e',
+				'li-heading': '#121212',
+				'li-subheading': '#545454',
+				'li-text': '#111',
 				'li-primary': '#0ea5e9',
 				
 				

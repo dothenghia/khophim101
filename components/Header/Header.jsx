@@ -32,7 +32,7 @@ const Header = ({ switchTheme }) => {
             </div>
 
 
-            <div className="bg-li-bg-3 dark:bg-da-bg-3">
+            <div className="bg-li-bg-3 dark:bg-da-bg-3 drop-shadow-md dark:drop-shadow-none ">
                 <nav className="container xl:max-w-6xl mx-auto flex items-center">
                     <div id='navbar-menu' className="w-full hidden lg:flex lg:items-center">
                         <Link href="/" className="header-text">

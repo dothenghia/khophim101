@@ -96,18 +96,17 @@
         + Làm gọn code
         + Split Layout
         + Add Components to HomePage
-
         + Theme :
             ~ tailwind.config
             ~ global.css
             ~ những chỗ riêng lẻ
+    - Get data as category
         + Header :
             ~ Add Theme button
-    - Get data as category
 
 
 
-- Add 'Most View Component'
+- Add data to 'Most View' Component
 - Add subpage [tap] to [phim]
   (the index.jsx of [phim] is the introduction page)
 - Add 'Xem thêm' to introduction part

@@ -43,15 +43,14 @@
     }
 
     .normal-btn {
-        @apply w-12 h-9 m-1 rounded-md flex flex-row justify-center items-center text-base
-               
+        @apply w-12 h-9 m-1 rounded-md flex flex-row justify-center items-center text-base font-medium
+               bg-li-subheading/50 text-li-heading hover:bg-li-subheading/90
                dark:bg-da-bg-1 dark:text-da-heading dark:hover:bg-da-bg-3
-
              ;
-
     }
     .active-btn {
-        @apply w-12 h-9 m-1 rounded-md flex flex-row justify-center items-center text-base
+        @apply w-12 h-9 m-1 rounded-md flex flex-row justify-center items-center text-base font-medium
+               bg-li-primary text-da-heading
                dark:bg-da-primary dark:text-da-heading
                ;
     }
