@@ -101,8 +101,7 @@
             ~ global.css
             ~ những chỗ riêng lẻ
     - Get data as category
-        + Header :
-            ~ Add Theme button
+    - Add Theme button
 
 
 
