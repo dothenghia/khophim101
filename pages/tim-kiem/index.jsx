@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 
 import Layout from "../../components/Layout";
 
@@ -12,12 +11,10 @@ const TimKiem = () => {
             </Head>
 
             {/* ================================================== */}
-            <div id="search" className="container h-screen lg:max-w-5xl mx-auto
-                                      bg-[#161f34] shadow-2xl ">
+            <div id="search" className="h-screen">
 
                 <div className="p-8">
                     <h1 className="mb-4 heading-text text-center">Tìm kiếm phim</h1>
-
 
                     <form className="flex items-center">
                         <label htmlFor="simple-search" className="sr-only">Search</label>
@@ -31,11 +28,8 @@ const TimKiem = () => {
                                               dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nhập tên phim" required/>
                         </div>
                         <button type="submit"
-                                className="p-2.5 ml-2 text-sm font-medium text-white bg-sky-500 rounded-lg border hover:bg-sky-700 
-                                           focus:ring-2 focus:outline-none focus:ring-blue-300
-                                           dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                className="p-2.5 ml-2 rounded-lg border text-sm font-medium text-white bg-li-primary dark:bg-da-primary hover:bg-sky-700 dark:hover:bg-sky-600 ">
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                            <span className="sr-only">Search</span>
                         </button>
                     </form>
 

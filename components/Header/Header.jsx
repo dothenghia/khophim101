@@ -43,15 +43,27 @@ const Header = () => {
                             Tìm kiếm
                         </Link>
 
-                        <p className="header-text">
-                            Phim Bộ
-                        </p>
-                        <p className="header-text">
-                            Phim Lẻ
-                        </p>
-                        <p className="header-text">
+                        <Link href="/phim-moi/1" className="header-text">
+                            Phim mới
+                        </Link>
+
+                        <Link href="/phim-chieu-rap/1" className="header-text">
+                            Phim chiếu rạp
+                        </Link>
+
+                        <Link href="/phim-le/1" className="header-text">
+                            Phim lẻ
+                        </Link>
+
+                        <Link href="/phim-bo/1" className="header-text">
+                            Phim bộ
+                        </Link>
+
+                        <Link href="/hoat-hinh/1" className="header-text">
                             Hoạt hình
-                        </p>
+                        </Link>
+
+                    
                     </div>
                 </nav>
             </div>
