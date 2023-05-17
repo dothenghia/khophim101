@@ -45,15 +45,6 @@ const Movie = ({ data }) => {
     const episodes = data['episodes'][0]
 
     const [currEpisode, setCurrEpisode] = useState('1')
-    const [modalRestrict, setModalRestrict] = useState(false)
-
-    useEffect(() => {
-        movieInfo['category'].forEach((category) => {
-            if (category['name'] == 'Phim 18+') {
-                setModalRestrict(true)
-            }
-        })
-    }, [])
 
     const moveToEpisode = (e) => {
         if (isNaN(e.target.innerHTML) === false && e.target.innerHTML !== "") {
@@ -69,18 +60,18 @@ const Movie = ({ data }) => {
 
             {/* ================================================== */}
 
-            <div className="container lg:max-w-5xl mx-auto bg-li-bg-2 dark:bg-da-bg-2 shadow-stone-400 dark:shadow shadow-2xl">
-                <div className="flex flex-col md:flex-row items-center p-5">
+            <div className="mt-0 md:mt-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start lg:pl-2">
 
-                    <div className="w-60 rounded-md overflow-hidden">
+                    <div className="w-60 mt-2 rounded-md overflow-hidden">
                         <img src={movieInfo['thumb_url']} alt={movieInfo['name']} />
                     </div>
 
-                    <div className="flex-1 pt-4 px-2 md:pt-1 md:px-6">
+                    <div className="flex-1 pt-4 px-2 md:pt-1 md:pl-4">
                         <h1 className="heading-text">{movieInfo['name']}</h1>
                         <h2 className="subheading-text">{movieInfo['origin_name']}</h2>
                         <p className="body-text">Trạng thái :
-                            <span className="text-blue-400 text-base font-bold"> {movieInfo['episode_current']}</span>
+                            <span className="text-li-primary dark:text-da-primary text-lg font-bold"> {movieInfo['episode_current']}</span>
                         </p>
                         <p className="body-text">Thời lượng : {movieInfo['time']}</p>
                         <p className="body-text">Đạo diễn : {RenderInformationArray(movieInfo['director'])}</p>
@@ -106,14 +97,14 @@ const Movie = ({ data }) => {
                         (episodes['server_data'][parseInt(currEpisode - 1, 10)]['link_embed'] === "") ?
                             <p className="heading-text text-center py-4">Phim này hiện tại chưa hỗ trợ</p>
                         :
-                        <iframe className="mx-auto w-full h-60 md:w-4/5 lg:w-5/6 md:h-96"
+                        <iframe className="w-full h-80 sm:h-96 md:h-[450px] xl:h-[500px]"
                             allowFullScreen={true}
                             src={episodes['server_data'][parseInt(currEpisode - 1, 10)]['link_embed']}>
                         </iframe>
                     }
 
                     {/* Buttons switch episodes */}
-                    <div className="mx-10 my-5 px-4 pt-2 pb-4 rounded-md border-2 border-[#333d4d]">
+                    <div className="my-6 px-4 pt-2 pb-4 rounded-md border-2 border-li-border dark:border-da-border">
                         <h1 className="heading-text text-lg mb-2">{episodes['server_name']} :</h1>
                         {
                             episodes['server_data'].map((episode, index) => {
@@ -128,46 +119,6 @@ const Movie = ({ data }) => {
                         }
                     </div>
 
-                </div>
-            </div>
-
-
-            {/* Modal 18+ */}
-            <div className={`${modalRestrict ? '' : 'hidden'} relative z-10`} aria-labelledby="modal-title" role="dialog" aria-modal="true">
-
-                <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-
-                <div className="fixed inset-0 z-10 overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4 text-center">
-
-                        <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                            <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                                <div className="sm:flex sm:items-start">
-                                    <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                                        <svg className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                                        </svg>
-                                    </div>
-                                    <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                        <h3 className="text-base font-semibold leading-6 text-gray-900" id="modal-title">Cảnh báo</h3>
-                                        <div className="mt-2">
-                                            <p className="text-sm text-gray-500">Phim có chứa nội dung nhạy cảm 18+</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                                <Link href='/' type="button" className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">
-                                    Quay về trang chủ
-                                </Link>
-                                <button type="button"
-                                        className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                                        onClick={() => {setModalRestrict(false)}}>
-                                    Tiếp tục xem
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 

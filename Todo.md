@@ -91,23 +91,23 @@
         + Làm gọn code
         + Split Layout
 
-### 16/5 :
+### 16, 17/5 :
     - POLISHING :
         + Làm gọn code
         + Split Layout
         + Add Components to HomePage
 
-        
         + Theme :
             ~ tailwind.config
             ~ global.css
             ~ những chỗ riêng lẻ
         + Header :
-            ~ 
-    
-- Add Theme button
+            ~ Add Theme button
+    - Get data as category
+
+
+
 - Add 'Most View Component'
-- Responsive Iframe for Mobile
 - Add subpage [tap] to [phim]
   (the index.jsx of [phim] is the introduction page)
 - Add 'Xem thêm' to introduction part
@@ -116,17 +116,4 @@
 ## Waiting Queue 🤌🤧🐢🥰
 + Improve Fetching performance :
     ~ Solution 1 : getStaticProps , reformat database Document (Remove redundant information)
-<!-- 
-    ~ Solution 2 : Live Fetching from raw database 
-                (Need to Trade-off Time for Feature)
-                    - 'year'         + 'current_episode'
-                    - fast           + filter 18+
-                    - live update
-
-    ~ Solution 3 : ... -->
-
-
-+ Thêm chức năng Phim Bộ Phim Lẻ ...
-+ Split UI into several components
-
 

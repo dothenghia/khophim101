@@ -10,15 +10,32 @@ export async function getStaticProps() {
     const client = await clientPromise;
     const db = client.db("khophim-db");
 
-    let movieData = await db.collection("phim").find({}).limit(8).toArray();
-    movieData = JSON.parse(JSON.stringify(movieData));
+    let phimMoiData = await db.collection("phim").find({}).limit(8).toArray();
+    phimMoiData = JSON.parse(JSON.stringify(phimMoiData));
+
+    let phimChieuRapData = await db.collection("phim").find({"chieurap" : true}).limit(8).toArray();
+    phimChieuRapData = JSON.parse(JSON.stringify(phimChieuRapData));
+
+    let phimLeData = await db.collection("phim").find({"type" : "single" , "chieurap" : false }).limit(8).toArray();
+    phimLeData = JSON.parse(JSON.stringify(phimLeData));
+
+    let phimBoData = await db.collection("phim").find({"type" : "series" , "chieurap" : false }).limit(8).toArray();
+    phimBoData = JSON.parse(JSON.stringify(phimBoData));
+
+    let phimHoatHinhData = await db.collection("phim").find({"type" : "hoathinh" , "chieurap" : false }).limit(8).toArray();
+    phimHoatHinhData = JSON.parse(JSON.stringify(phimHoatHinhData));
 
     return {
-        props: { movieData },
+        props: { phimMoiData ,
+                 phimChieuRapData ,
+                 phimLeData ,
+                 phimBoData ,
+                 phimHoatHinhData 
+                },
     };
 }
 
-const HomePage = ({ movieData }) => {
+const HomePage = ({ phimMoiData , phimChieuRapData , phimLeData , phimBoData , phimHoatHinhData }) => {
     return (
         <Layout>
             <Head>
@@ -28,13 +45,13 @@ const HomePage = ({ movieData }) => {
             {/* ================================================== */}
             <div id="home">
 
-                <div className="mt-5 pb-8 border-b-2 border-li-border-dark dark:border-da-border-dark">
+                <div className="pb-8 border-b-2 border-li-border dark:border-da-border">
                     <h1 className="page-title">
                         PHIM MỚI CẬP NHẬT
                     </h1>
                     <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
                         {
-                            movieData.map((movieInfo, index) => {
+                            phimMoiData.map((movieInfo, index) => {
                                 return (
                                     <MovieCard
                                         key={index}
@@ -46,7 +63,7 @@ const HomePage = ({ movieData }) => {
                     </div>
 
                     <div className="mt-8 pr-4 lg:pr-2 flex flex-row justify-end">
-                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                        <Link className="flex font-medium text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
                             href='/phim-moi/1'>
                             Xem thêm
                             <span className="pl-1 inline-flex flex-row items-center">
@@ -57,13 +74,13 @@ const HomePage = ({ movieData }) => {
                 </div>
 
 
-                <div className="mt-5 pb-8 border-b-2 border-li-border-dark dark:border-da-border-dark">
+                <div className="mt-5 pb-8 border-b-2 border-li-border dark:border-da-border">
                     <h1 className="page-title">
                         PHIM CHIẾU RẠP
                     </h1>
                     <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
                         {
-                            movieData.map((movieInfo, index) => {
+                            phimChieuRapData.map((movieInfo, index) => {
                                 return (
                                     <MovieCard
                                         key={index}
@@ -75,7 +92,7 @@ const HomePage = ({ movieData }) => {
                     </div>
 
                     <div className="mt-6 pr-4 lg:pr-2 flex flex-row justify-end">
-                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                        <Link className="flex font-medium text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
                             href='/phim-moi/1'>
                             Xem thêm
                             <span className="pl-1 inline-flex flex-row items-center">
@@ -86,13 +103,13 @@ const HomePage = ({ movieData }) => {
                 </div>
 
 
-                <div className="mt-5 pb-8 border-b-2 border-li-border-dark dark:border-da-border-dark">
+                <div className="mt-5 pb-8 border-b-2 border-li-border dark:border-da-border">
                     <h1 className="page-title">
                         PHIM LẺ
                     </h1>
                     <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
                         {
-                            movieData.map((movieInfo, index) => {
+                            phimLeData.map((movieInfo, index) => {
                                 return (
                                     <MovieCard
                                         key={index}
@@ -104,7 +121,7 @@ const HomePage = ({ movieData }) => {
                     </div>
 
                     <div className="mt-6 pr-4 lg:pr-2 flex flex-row justify-end">
-                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                        <Link className="flex font-medium text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
                             href='/phim-moi/1'>
                             Xem thêm
                             <span className="pl-1 inline-flex flex-row items-center">
@@ -115,13 +132,13 @@ const HomePage = ({ movieData }) => {
                 </div>
 
 
-                <div className="mt-5 pb-8 border-b-2 border-li-border-dark dark:border-da-border-dark">
+                <div className="mt-5 pb-8 border-b-2 border-li-border dark:border-da-border">
                     <h1 className="page-title">
                         PHIM BỘ
                     </h1>
                     <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
                         {
-                            movieData.map((movieInfo, index) => {
+                            phimBoData.map((movieInfo, index) => {
                                 return (
                                     <MovieCard
                                         key={index}
@@ -133,36 +150,7 @@ const HomePage = ({ movieData }) => {
                     </div>
 
                     <div className="mt-6 pr-4 lg:pr-2 flex flex-row justify-end">
-                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
-                            href='/phim-moi/1'>
-                            Xem thêm
-                            <span className="pl-1 inline-flex flex-row items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16"><path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" /></svg>
-                            </span>
-                        </Link>
-                    </div>
-                </div>
-
-
-                <div className="mt-5 pb-8 border-b-2 border-li-border-dark dark:border-da-border-dark">
-                    <h1 className="page-title">
-                        PHIM HOẠT HÌNH
-                    </h1>
-                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
-                        {
-                            movieData.map((movieInfo, index) => {
-                                return (
-                                    <MovieCard
-                                        key={index}
-                                        movieInfo={movieInfo}
-                                    />
-                                )
-                            })
-                        }
-                    </div>
-
-                    <div className="mt-6 pr-4 lg:pr-2 flex flex-row justify-end">
-                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                        <Link className="flex font-medium text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
                             href='/phim-moi/1'>
                             Xem thêm
                             <span className="pl-1 inline-flex flex-row items-center">
@@ -175,11 +163,11 @@ const HomePage = ({ movieData }) => {
 
                 <div className="mt-5 pb-8">
                     <h1 className="page-title">
-                        TV SHOW
+                        PHIM HOẠT HÌNH
                     </h1>
                     <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
                         {
-                            movieData.map((movieInfo, index) => {
+                            phimHoatHinhData.map((movieInfo, index) => {
                                 return (
                                     <MovieCard
                                         key={index}
@@ -191,7 +179,7 @@ const HomePage = ({ movieData }) => {
                     </div>
 
                     <div className="mt-6 pr-4 lg:pr-2 flex flex-row justify-end">
-                        <Link className="flex text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
+                        <Link className="flex font-medium text-li-heading dark:text-da-heading hover:text-li-primary dark:hover:text-da-primary"
                             href='/phim-moi/1'>
                             Xem thêm
                             <span className="pl-1 inline-flex flex-row items-center">

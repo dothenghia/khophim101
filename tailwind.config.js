@@ -13,8 +13,7 @@ module.exports = {
 				'li-bg-1': '#fefefe',
 				'li-bg-2': '#f2f2f2',
 				'li-bg-3': '#f0f2fa',
-				'li-border-light': '#dbdeeb',
-				'li-border-dark': '#e5e7eb',
+				'li-border': '#dbdeeb',
 
 				'li-heading': '#1e202a',
 				'li-subheading': '#63687e',
@@ -22,16 +21,16 @@ module.exports = {
 				'li-primary': '#0ea5e9',
 				
 				
-				'da-header': '#1e293b',
-				'da-bg-1': '#0f172a',
-				'da-bg-2': '#161f34',
-				'da-bg-3': '#1e293b',
-				'da-border-dark': '#333d4d',
-				'da-border-light': '#e5e7eb',
 
-				'da-heading': '#e2e8f0',
-				'da-subheading': '#778394',
-				'da-text': '#778394',
+				'da-header': '#151414',
+				'da-bg-1': '#424040',
+				'da-bg-2': '#262525',
+				'da-bg-3': '#1a1a1afa',
+				'da-border': '#6f6f6f',
+
+				'da-heading': '#fff',
+				'da-subheading': '#9f9f9f',
+				'da-text': '#e2e8f0',
 				'da-primary': '#0ea5e9',
 			}
 		},

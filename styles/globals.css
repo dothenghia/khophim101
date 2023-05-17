@@ -6,6 +6,7 @@
 
 * {
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
 
@@ -14,7 +15,7 @@
     .page-container {
         @apply container xl:max-w-6xl mx-auto
                bg-li-bg-2 dark:bg-da-bg-2
-               shadow-stone-400 dark:shadow shadow-2xl;
+               shadow-2xl;
     }
     .page-title {
         @apply mb-3 pl-2 py-1 border-l-4 
@@ -27,33 +28,44 @@
     /* ======= TEXT STYLE ======= */
 
     .heading-text {
-        @apply text-2xl text-[#1e202a] dark:text-[#e2e8f0] font-medium;
+        @apply text-2xl text-li-heading dark:text-da-heading font-medium;
     }
 
     .subheading-text {
-        @apply text-lg text-[#63687e] dark:text-[#778394] mb-1;
+        @apply text-lg text-li-subheading dark:text-da-subheading mb-1;
     }
 
     .body-text {
-        @apply text-sm text-slate-700 dark:text-[#e2e8f0] mb-2;
+        @apply text-sm text-li-text dark:text-da-text mb-2;
     }
     .body-text-2 {
-        @apply text-sm text-sky-500 dark:text-blue-400 mb-2;
+        @apply text-sm text-li-primary dark:text-da-primary mb-2;
     }
 
     .normal-btn {
-        @apply w-11 h-11 m-1 rounded-lg flex flex-row justify-center items-center border-2
-               bg-transparent border-slate-500/60 text-slate-900/60
-             hover:border-sky-500 hover:text-sky-500 hover:font-medium
+        @apply w-12 h-9 m-1 rounded-md flex flex-row justify-center items-center text-base
+               
+               dark:bg-da-bg-1 dark:text-da-heading dark:hover:bg-da-bg-3
 
-             dark:border-slate-700 dark:text-white dark:hover:font-normal
-             dark:hover:bg-slate-700 dark:hover:border-slate-500;
+             ;
 
     }
     .active-btn {
-        @apply w-11 h-11 m-1 rounded-lg  flex flex-row justify-center items-center border-2
-               border-sky-500 bg-sky-500 text-white
-               dark:bg-slate-500 dark:border-slate-500 dark:text-white
+        @apply w-12 h-9 m-1 rounded-md flex flex-row justify-center items-center text-base
+               dark:bg-da-primary dark:text-da-heading
+               ;
+    }
+
+    .header-text {
+        @apply px-3 block lg:inline-block py-[10px] lg:pt-3 
+               text-lg font-medium
+               text-li-heading dark:text-da-heading 
+               hover:border-l-2 hover:text-li-primary dark:hover:text-da-primary
+               hover:pl-[10px] lg:hover:pl-3 lg:hover:border-l-0
+
+               lg:hover:text-li-heading lg:dark:hover:text-da-heading 
+               lg:hover:pb-2 lg:hover:border-b-2
+               hover:border-li-primary dark:hover:border-da-primary
                ;
     }
 }

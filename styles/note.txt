@@ -1,9 +1,0 @@
-#0f172a -> 1 gray-900
-#161f34 -> 2
-#1e293b -> 3 slate-800
-#333d4d -> 4 slate-600 border trầm
-#e5e7eb -> 5 gray-200 border sáng
-
-- Heading Text : #e2e8f0 => slate-200
-- Subheading Text : #778394 ~~> slate-400
-- Primary : sky-500 == rgb(14 165 233)
