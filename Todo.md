@@ -104,11 +104,11 @@
     - Add Theme button
 
     - Create phim-chieu-rap, phim-le, phim-bo, hoat-hinh
-    - Polishing SearchPage
 
 ### 18/5 :
-    - Add data to 'Most View' Component
+    - Polishing SearchPage
     - Query movie
+    - Add data to 'Most View' Component
     
 - Add subpage [tap] to [phim]
   (the index.jsx of [phim] is the introduction page)

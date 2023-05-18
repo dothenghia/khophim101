@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { themeContext } from '../lib/themeContext';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -6,8 +6,7 @@ import Link from 'next/link';
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 
-export default function Layout({ bangXepHangData, children }) {
-    console.log(bangXepHangData)
+export default function Layout({ children }) {
 
     const darkModeContext = useContext(themeContext)
 
@@ -44,7 +43,7 @@ export default function Layout({ bangXepHangData, children }) {
                     <div className="absolute w-11 h-6 bg-gray-400 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full 
                                          peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
                                          after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all 
-                                         peer-checked:bg-gradient-to-br from-sky-500 to-indigo-500"></div>
+                                         peer-checked:bg-gradient-to-r from-sky-500 to-indigo-500"></div>
                 </label>
                 <span className='mx-2'>
                     <svg xmlns="http://www.w3.org/2000/svg" className="bi bi-moon-stars-fill -rotate-90 h-[18px] w-[18px] fill-gray-500 dark:fill-white" viewBox="0 0 16 16">
@@ -69,30 +68,31 @@ export default function Layout({ bangXepHangData, children }) {
                     <div className="basis-1/4 mt-4 lg:mt-16 mx-4 lg:ml-0 h-fit rounded-md overflow-hidden border-2 border-li-border dark:border-da-border">
                         <h1 className="text-xl px-4 pt-3 text-li-heading dark:text-da-heading font-medium">Bảng xếp hạng</h1>
                         <ul>
+                            <li className='text-li-subheading dark:text-da-subheading text-center p-4'>--- Trống ---</li>
                             {
-                                bangXepHangData.map((movieInfo) => {
-                                    return (
-                                        <li key={movieInfo['slug']}>
-                                            <Link href={`/phim/${movieInfo['slug']}`}
-                                                className="p-3 flex flex-row hover:bg-li-bg-1 dark:hover:bg-da-bg-1">
-                                                <img className="w-16 h-16 object-cover"
-                                                    src={movieInfo['thumb_url']}
-                                                    alt={movieInfo['slug']} />
-                                                <div className="px-2 pt-1 flex-1 ">
-                                                    <h3 className="text-sm text-li-heading dark:text-da-heading font-medium line-clamp-1">
-                                                        {movieInfo['name']}
-                                                    </h3>
-                                                    <p className="text-sm text-li-subheading dark:text-da-subheading line-clamp-1">
-                                                        {movieInfo['origin_name']}
-                                                    </p>
-                                                    <p className="text-sm text-li-subheading dark:text-da-subheading line-clamp-1">
-                                                        Lượt xem: {movieInfo['view']}
-                                                    </p>
-                                                </div>
-                                            </Link>
-                                        </li>
-                                    )
-                                })
+                                // bangXepHangData.map((movieInfo) => {
+                                //     return (
+                                //         <li key={movieInfo['slug']}>
+                                //             <Link href={`/phim/${movieInfo['slug']}`}
+                                //                 className="p-3 flex flex-row hover:bg-li-bg-1 dark:hover:bg-da-bg-1">
+                                //                 <img className="w-16 h-16 object-cover"
+                                //                     src={movieInfo['thumb_url']}
+                                //                     alt={movieInfo['slug']} />
+                                //                 <div className="px-2 pt-1 flex-1 ">
+                                //                     <h3 className="text-sm text-li-heading dark:text-da-heading font-medium line-clamp-1">
+                                //                         {movieInfo['name']}
+                                //                     </h3>
+                                //                     <p className="text-sm text-li-subheading dark:text-da-subheading line-clamp-1">
+                                //                         {movieInfo['origin_name']}
+                                //                     </p>
+                                //                     <p className="text-sm text-li-subheading dark:text-da-subheading line-clamp-1">
+                                //                         Lượt xem: {movieInfo['view']}
+                                //                     </p>
+                                //                 </div>
+                                //             </Link>
+                                //         </li>
+                                //     )
+                                // })
                             }
                         </ul>
                     </div>

@@ -25,23 +25,19 @@ export async function getStaticProps() {
     let phimHoatHinhData = await db.collection("phim").find({"type" : "hoathinh" , "chieurap" : false }).limit(8).toArray(); //256
     phimHoatHinhData = JSON.parse(JSON.stringify(phimHoatHinhData));
 
-    let bangXepHangData = await db.collection("phim").find({ }).sort({"view" : -1}).limit(10).toArray(); //256
-    bangXepHangData = JSON.parse(JSON.stringify(bangXepHangData));
-
     return {
         props: { phimMoiData ,
                  phimChieuRapData ,
                  phimLeData ,
                  phimBoData ,
-                 phimHoatHinhData ,
-                 bangXepHangData
+                 phimHoatHinhData
                 },
     };
 }
 
-const HomePage = ({ phimMoiData , phimChieuRapData , phimLeData , phimBoData , phimHoatHinhData , bangXepHangData}) => {
+const HomePage = ({ phimMoiData , phimChieuRapData , phimLeData , phimBoData , phimHoatHinhData }) => {
     return (
-        <Layout bangXepHangData={bangXepHangData}>
+        <Layout>
             <Head>
                 <title>Trang chủ | KhoPhim101</title>
             </Head>
