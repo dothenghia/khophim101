@@ -1,11 +1,13 @@
 import { useContext, useEffect } from 'react';
 import { themeContext } from '../lib/themeContext';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 
-export default function Layout({ children }) {
+export default function Layout({ bangXepHangData, children }) {
+    console.log(bangXepHangData)
 
     const darkModeContext = useContext(themeContext)
 
@@ -28,6 +30,7 @@ export default function Layout({ children }) {
             {/* ============================================ */}
             <Header />
 
+            {/* SWITCH THEME BUTTON */}
             <div className='fixed bottom-20 -left-5 rotate-90 z-50 
                             flex flex-row items-center border-2 py-1 rounded-full
                             bg-li-bg-2/40 border-gray-500 dark:bg-da-bg-2/40 dark:border-da-bg-2/70'>
@@ -52,25 +55,45 @@ export default function Layout({ children }) {
             </div>
 
 
+            {/* MAIN CONTAINER */}
             <div className='bg-li-bg-1 dark:bg-da-bg-1'>
 
-                <div className='page-container flex flex-col lg:flex-row '>
+                <div className='page-container pb-16 lg:pb-10 flex flex-col lg:flex-row '>
+
+                    {/* PAGE CONTAINER */}
                     <main className='basis-3/4 p-4'>
                         {children}
                     </main>
 
-                    <div className="basis-1/4 px-4 pt-3 mt-4 
-                                    lg:mt-16 mx-4 lg:ml-0 h-fit
-                                    rounded-md border-2
-                                    border-li-border dark:border-da-border">
-                        <h1 className="text-xl text-li-heading dark:text-da-heading font-medium">Bảng xếp hạng</h1>
+                    {/* MOST-VIEW CONTAINER */}
+                    <div className="basis-1/4 mt-4 lg:mt-16 mx-4 lg:ml-0 h-fit rounded-md overflow-hidden border-2 border-li-border dark:border-da-border">
+                        <h1 className="text-xl px-4 pt-3 text-li-heading dark:text-da-heading font-medium">Bảng xếp hạng</h1>
                         <ul>
-                            <li>123</li>
-                            <li>123</li>
-                            <li>123</li>
-                            <li>123</li>
-                            <li>123</li>
-                            <li>123</li>
+                            {
+                                bangXepHangData.map((movieInfo) => {
+                                    return (
+                                        <li key={movieInfo['slug']}>
+                                            <Link href={`/phim/${movieInfo['slug']}`}
+                                                className="p-3 flex flex-row hover:bg-li-bg-1 dark:hover:bg-da-bg-1">
+                                                <img className="w-16 h-16 object-cover"
+                                                    src={movieInfo['thumb_url']}
+                                                    alt={movieInfo['slug']} />
+                                                <div className="px-2 pt-1 flex-1 ">
+                                                    <h3 className="text-sm text-li-heading dark:text-da-heading font-medium line-clamp-1">
+                                                        {movieInfo['name']}
+                                                    </h3>
+                                                    <p className="text-sm text-li-subheading dark:text-da-subheading line-clamp-1">
+                                                        {movieInfo['origin_name']}
+                                                    </p>
+                                                    <p className="text-sm text-li-subheading dark:text-da-subheading line-clamp-1">
+                                                        Lượt xem: {movieInfo['view']}
+                                                    </p>
+                                                </div>
+                                            </Link>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
 

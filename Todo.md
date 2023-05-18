@@ -106,6 +106,7 @@
     - Create phim-chieu-rap, phim-le, phim-bo, hoat-hinh
     - Polishing SearchPage
 
+### 18/5 :
     - Add data to 'Most View' Component
     - Query movie
     
