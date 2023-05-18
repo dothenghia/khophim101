@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import clientPromise from "../../lib/mongodb";
@@ -31,31 +31,26 @@ export async function getServerSideProps(context) {
 const TimKiem = ({ movieData , queries }) => {
     const [input, setQuery] = useState((queries.name !== undefined) ? queries.name : '')
     const router = useRouter()
-    console.log('Query : ', input)
+    const inputDOM = useRef(null)
 
     useEffect(() => {
         const keyDownHandler = (e) => {
-            console.log('Key : ', e.key)
-            console.log('Inside : ', input)
 
             if (e.key === 'Enter') {
                 router.push({
                     pathname: '/tim-kiem',
                     query: {
-                        name: `${input}`,
-                        count: 30,
+                        name: `${inputDOM.current.value}`
                     }
                 })
             }
         }
 
         window.addEventListener('keydown', keyDownHandler)
-        console.log('Add')
 
         // Cleanup function
         return () => {
             window.removeEventListener('keydown', keyDownHandler)
-            console.log('Remove')
         }
     }, [])
 
@@ -83,6 +78,8 @@ const TimKiem = ({ movieData , queries }) => {
                         value={input}
                         onChange={(e) => { setQuery(e.target.value) }}
                         required
+                        autoComplete="true"
+                        ref={inputDOM}
                     />
 
                     <Link href={{ pathname: '/tim-kiem', query: { name: input } }}

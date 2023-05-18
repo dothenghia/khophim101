@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const MovieCard = ({ movieInfo }) => {
     return (
@@ -8,9 +9,16 @@ const MovieCard = ({ movieInfo }) => {
                         outline-gray-800 dark:outline-gray-300
                         bg-li-bg-3 dark:bg-da-bg-3'
         >
-            <img className="w-full flex-1 sm:flex-none sm:h-[430px] md:h-[250px] lg:h-[250px] xl:h-[280px]"
-                src={movieInfo['thumb_url']}
-                alt={movieInfo['slug']} />
+            <div className="relative w-full flex-1 sm:flex-none sm:h-[430px] md:h-[250px] lg:h-[250px] xl:h-[280px]">
+                <Image
+                    priority={true}
+                    src={movieInfo['thumb_url']}
+                    alt={movieInfo['slug']} 
+                    fill
+                    sizes="(max-width: 1200px) 100vw, 100vw"
+                    quality={70}
+                />
+            </div>
 
             <div className="p-[10px] h-24">
                 <h2 className="text-base font-medium mb-2 text-li-heading dark:text-da-heading line-clamp-2">
