@@ -2,9 +2,84 @@ import { useContext, useEffect, useState } from 'react';
 import { themeContext } from '../lib/themeContext';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
+
+const mostViewData = [
+    {
+        name: "Ẩn Danh 2",
+        origin_name: "Taxi Driver 2",
+        slug: "an-danh-2",
+        thumb_url: "https://img.ophim1.com/uploads/movies/an-danh-2-thumb.jpg",
+        view: 331128
+    },
+    {
+        name: "Cầm Tù",
+        origin_name: "Esaret",
+        slug: "cam-tu",
+        thumb_url: "https://img.ophim1.com/uploads/movies/cam-tu-thumb.jpg",
+        view: 19195
+    },
+    {
+        name: "Chim Bói Cá",
+        origin_name: "Yali Çapkini",
+        slug: "chim-boi-ca",
+        thumb_url: "https://img.ophim1.com/uploads/movies/chim-boi-ca-thumb.jpg",
+        view: 12867
+    },
+    {
+        name: "Ba chị em (Phần 2)",
+        origin_name: "Uc Kiz Kardes",
+        slug: "ba-chi-em-phan-2",
+        thumb_url: "https://img.ophim1.com/uploads/movies/ba-chi-em-phan-2-thumb.jpg",
+        view: 4378
+    },
+    {
+        name: "Avatar 2: Dòng Chảy Của Nước",
+        origin_name: "Avatar 2",
+        slug: "avatar-2-dong-chay-cua-nuoc",
+        thumb_url: "https://img.ophim1.com/uploads/movies/avatar-2-dong-chay-cua-nuoc-thumb.jpg",
+        view: 4113
+    },
+    {
+        name: "Phát Ngôn Viên Pháp Lý",
+        origin_name: "Speakers of Law",
+        slug: "phat-ngon-vien-phap-ly",
+        thumb_url: "https://img.ophim1.com/uploads/movies/phat-ngon-vien-phap-ly-thumb.jpg",
+        view: 3297
+    },
+    {
+        name: "Đảo Hải Tặc",
+        origin_name: "One Piece (Luffy)",
+        slug: "one-piece",
+        thumb_url: "https://img.ophim1.com/uploads/movies/one-piece-thumb.jpg",
+        view: 3265
+    },
+    {
+        name: "Biệt Đội Tàng Hình",
+        origin_name: "The Invisibles",
+        slug: "biet-doi-tang-hinh",
+        thumb_url: "https://img.ophim1.com/uploads/movies/biet-doi-tang-hinh-thumb.jpg",
+        view: 3213
+    },
+    {
+        name: "Goedam: Chuyện ma đô thị",
+        origin_name: "Goedam",
+        slug: "goedam-chuyen-ma-do-thi",
+        thumb_url: "https://img.ophim1.com/uploads/movies/goedam-chuyen-ma-do-thi-thumb.jpg",
+        view: 3040
+    },
+    {
+        name: "Hoa Máu",
+        origin_name: "Kan Cicekleri",
+        slug: "hoa-mau",
+        thumb_url: "https://img.ophim1.com/uploads/movies/hoa-mau-thumb.jpg",
+        view: 2519
+    }
+]
+
 
 export default function Layout({ children }) {
 
@@ -68,31 +143,45 @@ export default function Layout({ children }) {
                     <div className="basis-1/4 mt-4 lg:mt-16 mx-4 lg:ml-0 h-fit rounded-md overflow-hidden border-2 border-li-border dark:border-da-border">
                         <h1 className="text-xl px-4 pt-3 text-li-heading dark:text-da-heading font-medium">Bảng xếp hạng</h1>
                         <ul>
-                            <li className='text-li-subheading dark:text-da-subheading text-center p-4'>--- Trống ---</li>
+                            {/* <li className='text-li-subheading dark:text-da-subheading text-center p-4'>--- Trống ---</li> */}
                             {
-                                // bangXepHangData.map((movieInfo) => {
-                                //     return (
-                                //         <li key={movieInfo['slug']}>
-                                //             <Link href={`/phim/${movieInfo['slug']}`}
-                                //                 className="p-3 flex flex-row hover:bg-li-bg-1 dark:hover:bg-da-bg-1">
-                                //                 <img className="w-16 h-16 object-cover"
-                                //                     src={movieInfo['thumb_url']}
-                                //                     alt={movieInfo['slug']} />
-                                //                 <div className="px-2 pt-1 flex-1 ">
-                                //                     <h3 className="text-sm text-li-heading dark:text-da-heading font-medium line-clamp-1">
-                                //                         {movieInfo['name']}
-                                //                     </h3>
-                                //                     <p className="text-sm text-li-subheading dark:text-da-subheading line-clamp-1">
-                                //                         {movieInfo['origin_name']}
-                                //                     </p>
-                                //                     <p className="text-sm text-li-subheading dark:text-da-subheading line-clamp-1">
-                                //                         Lượt xem: {movieInfo['view']}
-                                //                     </p>
-                                //                 </div>
-                                //             </Link>
-                                //         </li>
-                                //     )
-                                // })
+                                mostViewData.map((movieInfo) => {
+                                    return (
+                                        <li key={movieInfo['slug']}>
+                                            <Link href={`/phim/${movieInfo['slug']}`}
+                                                className="py-2 px-3 flex flex-row hover:bg-li-bg-1 dark:hover:bg-da-bg-1">
+                                                {/* <img className="w-16 h-16 object-cover"
+                                                    src={movieInfo['thumb_url']}
+                                                    alt={movieInfo['slug']}
+                                                /> */}
+                                                <div className='w-[68px] h-[98px] relative'>
+                                                    <Image
+                                                        priority={true}
+                                                        src={movieInfo['thumb_url']}
+                                                        alt={movieInfo['slug']}
+                                                        fill
+                                                        sizes="(max-width: 1200px) 100vw, 100vw"
+                                                        quality={60}
+                                                        // style={{objectFit: "contain"}}
+                                                    />
+                                                </div>
+                                                <div className="px-2 pt-1 flex-1 flex items-start">
+                                                    <div>
+                                                        <h3 className="text-base text-li-heading dark:text-da-heading font-medium line-clamp-2">
+                                                            {movieInfo['name']}
+                                                        </h3>
+                                                        <p className="text-sm mb-1 text-li-subheading dark:text-da-subheading line-clamp-1">
+                                                            {movieInfo['origin_name']}
+                                                        </p>
+                                                        <p className="text-sm text-li-subheading dark:text-da-subheading line-clamp-1">
+                                                            Lượt xem: {movieInfo['view']}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        </li>
+                                    )
+                                })
                             }
                         </ul>
                     </div>

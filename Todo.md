@@ -108,13 +108,22 @@
 ### 18/5 :
     - Polishing SearchPage
     - Query movie
-    - Add data to 'Most View' Component
-    
-- Add subpage [tap] to [phim]
-  (the index.jsx of [phim] is the introduction page)
-- Add 'Xem thêm' to introduction part
+    - Optimize image
+
+### 19/5 :
+    - Add data to 'Most View' Component (Fake Data)
+    - Blur Image when onLoad
+
+- Polishing Movie Page :
+    + Add subpage [tap] to [phim]
+        (the index.jsx of [phim] is the introduction page)
+    + Add 'Xem thêm' to introduction part
 
 ## Waiting Queue 🤌🤧🐢🥰
++ Add Introduction, Contact, Social Link to Footer
++ Saved Movie to LocalStorage
 + Improve Fetching performance :
     ~ Solution 1 : getStaticProps , reformat database Document (Remove redundant information)
++ Create new Cluster, new username & password for database
 
+~ Redesign app (Netflix, Themoviedb)
