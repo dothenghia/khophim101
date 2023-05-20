@@ -19,7 +19,14 @@ export async function getServerSideProps(context) {
 
     if (queries.name !== undefined) {
         regex = new RegExp(queries.name.replace(/\s/g, '.*'), 'i')
-        movieData = await db.collection("phim").find({ name: { $regex: regex } }).toArray();
+        const query = {
+            $or: [
+                { name: { $regex: regex } },
+                { origin_name: { $regex: regex } }
+            ]
+        };
+
+        movieData = await db.collection("phim").find(query).toArray();
         movieData = JSON.parse(JSON.stringify(movieData));
     }
 
@@ -35,14 +42,15 @@ const TimKiem = ({ movieData , queries }) => {
 
     useEffect(() => {
         const keyDownHandler = (e) => {
-
             if (e.key === 'Enter') {
-                router.push({
-                    pathname: '/tim-kiem',
-                    query: {
-                        name: `${inputDOM.current.value}`
-                    }
-                })
+                if (inputDOM.current.value !== "" && inputDOM.current.value.length != 1 && inputDOM.current.value.length != 2) {
+                    router.push({
+                        pathname: '/tim-kiem',
+                        query: {
+                            name: `${inputDOM.current.value}`
+                        }
+                    })
+                }
             }
         }
 

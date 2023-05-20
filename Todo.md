@@ -114,6 +114,9 @@
     - Add data to 'Most View' Component (Fake Data)
     - Blur Image when onLoad
 
+### 20/5 :
+    - Search Origin_name and ko dấu
+
 - Polishing Movie Page :
     + Add subpage [tap] to [phim]
         (the index.jsx of [phim] is the introduction page)
