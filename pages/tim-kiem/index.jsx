@@ -12,7 +12,7 @@ export async function getServerSideProps(context) {
     const queries = context.query
 
     const client = await clientPromise;
-    const db = client.db("khophim-db");
+    const db = client.db("movie-db");
 
     let regex;
     let movieData = [];
@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
             ]
         };
 
-        movieData = await db.collection("phim").find(query).toArray();
+        movieData = await db.collection("movie").find(query).toArray();
         movieData = JSON.parse(JSON.stringify(movieData));
     }
 

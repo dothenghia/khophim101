@@ -13,9 +13,9 @@ export async function getServerSideProps(context) {
     const skip = (page - 1) * 24 || 0;
 
     const client = await clientPromise;
-    const db = client.db("khophim-db");
+    const db = client.db("movie-db");
 
-    let movieData = await db.collection("phim").find({"chieurap" : true}).skip(skip).limit(24).toArray();
+    let movieData = await db.collection("movie").find({"chieurap" : true}).skip(skip).limit(24).toArray();
     movieData = JSON.parse(JSON.stringify(movieData));
 
     return {

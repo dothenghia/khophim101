@@ -102,7 +102,6 @@
             ~ những chỗ riêng lẻ
     - Get data as category
     - Add Theme button
-
     - Create phim-chieu-rap, phim-le, phim-bo, hoat-hinh
 
 ### 18/5 :
@@ -112,19 +111,23 @@
 
 ### 19/5 :
     - Add data to 'Most View' Component (Fake Data)
-    - Blur Image when onLoad
 
 ### 20/5 :
     - Search Origin_name and ko dấu
 
-- Polishing Movie Page :
-    + Add subpage [tap] to [phim]
-        (the index.jsx of [phim] is the introduction page)
-    + Add 'Xem thêm' to introduction part
+### 24/5 :
+    - Update Data
+
+    - Polishing Movie Page :
+        + Add subpage [tap] to [phim]
+            (the index.jsx of [phim] is the introduction page)
+        + Add 'Xem thêm' to introduction part
+
 
 ## Waiting Queue 🤌🤧🐢🥰
 + Add Introduction, Contact, Social Link to Footer
 + Saved Movie to LocalStorage
+- Blur Image when onLoad
 + Improve Fetching performance :
     ~ Solution 1 : getStaticProps , reformat database Document (Remove redundant information)
 + Create new Cluster, new username & password for database

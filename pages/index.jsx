@@ -8,21 +8,21 @@ import MovieCard from "../components/MovieCard/MovieCard";
 // Get data from MongoDB
 export async function getStaticProps() {
     const client = await clientPromise;
-    const db = client.db("khophim-db");
+    const db = client.db("movie-db");
 
-    let phimMoiData = await db.collection("phim").find({}).limit(8).toArray(); // 2327
+    let phimMoiData = await db.collection("movie").find({}).limit(8).toArray(); // 2327
     phimMoiData = JSON.parse(JSON.stringify(phimMoiData));
 
-    let phimChieuRapData = await db.collection("phim").find({"chieurap" : true}).limit(8).toArray(); // 28
+    let phimChieuRapData = await db.collection("movie").find({"chieurap" : true}).limit(8).toArray(); // 28
     phimChieuRapData = JSON.parse(JSON.stringify(phimChieuRapData));
 
-    let phimLeData = await db.collection("phim").find({"type" : "single" , "chieurap" : false }).limit(8).toArray(); // 1285
+    let phimLeData = await db.collection("movie").find({"type" : "single" , "chieurap" : false }).limit(8).toArray(); // 1285
     phimLeData = JSON.parse(JSON.stringify(phimLeData));
 
-    let phimBoData = await db.collection("phim").find({"type" : "series" , "chieurap" : false }).limit(8).toArray(); // 741
+    let phimBoData = await db.collection("movie").find({"type" : "series" , "chieurap" : false }).limit(8).toArray(); // 741
     phimBoData = JSON.parse(JSON.stringify(phimBoData));
 
-    let phimHoatHinhData = await db.collection("phim").find({"type" : "hoathinh" , "chieurap" : false }).limit(8).toArray(); //256
+    let phimHoatHinhData = await db.collection("movie").find({"type" : "hoathinh" , "chieurap" : false }).limit(8).toArray(); //256
     phimHoatHinhData = JSON.parse(JSON.stringify(phimHoatHinhData));
 
     return {
