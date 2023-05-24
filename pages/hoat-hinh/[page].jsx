@@ -83,7 +83,7 @@ const PhimHoatHinh = ({ movieData, page }) => {
                 {/* Buttons switch page */}
                 <div>
                     <div className="mt-10 flex flex-row flex-wrap justify-center">
-                        {renderPageButtons(parseInt(page, 10), 11)}
+                        {renderPageButtons(parseInt(page, 10), 28)}
                     </div>
                 </div>
 
