@@ -1,4 +1,4 @@
-# **KhoPhim101** *[NextJS, MongoDB]*
+# **KhoPhim101** [NextJS, MongoDB]
 
 Website xem phim miễn phí không quảng cáo.
 
@@ -16,9 +16,9 @@ Ngôn ngữ và Framework sử dụng :
 ## Preview
 
 ### Trang chủ
-![HomePage-Light](https://github-production-user-asset-6210df.s3.amazonaws.com/63101932/240816546-05ee735d-54a6-4028-9fdd-2982267fe468.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230525%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230525T060356Z&X-Amz-Expires=300&X-Amz-Signature=be4ca7cdb1b8b19b39444d16964fe35b351ca373313e0f325ff7340e83c995fb&X-Amz-SignedHeaders=host&actor_id=63101932&key_id=0&repo_id=630038706)
+![HomePage-Dark](https://scontent.fsgn2-8.fna.fbcdn.net/v/t1.15752-9/346163257_796926001653310_8045995226978568015_n.png?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=k70P-XRTuTwAX8xW5g7&_nc_oc=AQlDYSDoTRVQwFz1O4Ez-gZYRPc3QI7gvnHPCmdy44ZT3KH-CdTg62wGoQ5H-xTPbDYn8kcVoioytBttmopCjkHF&_nc_ht=scontent.fsgn2-8.fna&oh=03_AdSrMFjLukWhWU-sB-3q0T4N8R97JgH-uRvZO0eeovdrFg&oe=649663FF)
 
-![HomePage-Dark](https://github-production-user-asset-6210df.s3.amazonaws.com/63101932/240816532-210bfc3f-06ba-48f8-9679-55beac271311.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230525%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230525T060338Z&X-Amz-Expires=300&X-Amz-Signature=9dcd1bcaf2e0f6b2a55c68053023a0f341c5daf9f1be838e8789060c11915f17&X-Amz-SignedHeaders=host&actor_id=63101932&key_id=0&repo_id=630038706)
+![HomePage-Light](https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.15752-9/346155118_787889632707267_3800881208308905668_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=IvuJCPZ-t44AX90qoJN&_nc_ht=scontent.fsgn2-6.fna&oh=03_AdTPFsNKFn-NEUkaeEgNINML4FHce_07IXu91VDw7rllrw&oe=649676ED)
 
 ### Trang phim
 ![MoviePage-Dark](https://github-production-user-asset-6210df.s3.amazonaws.com/63101932/240816553-518f892a-dfda-49d5-acc0-39d0c15e631e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230525%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230525T060550Z&X-Amz-Expires=300&X-Amz-Signature=a6c2ccd867db1d39b0d806d9f3403ce088a37b3dbeb50cf48b6e3067fe637114&X-Amz-SignedHeaders=host&actor_id=63101932&key_id=0&repo_id=630038706)
