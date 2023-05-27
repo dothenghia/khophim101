@@ -3,6 +3,7 @@ import Link from "next/link";
 import clientPromise from "../lib/mongodb";
 
 import Layout from "../components/Layout";
+import ThumbnailSlider from "../components/ThumbnailSlider/ThumbnailSlider";
 import MovieCard from "../components/MovieCard/MovieCard";
 
 // Get data from MongoDB
@@ -10,19 +11,19 @@ export async function getStaticProps() {
     const client = await clientPromise;
     const db = client.db("movie-db");
 
-    let phimMoiData = await db.collection("movie").find({}).limit(8).toArray(); // 2327
+    let phimMoiData = await db.collection("movie").find({}).limit(8).toArray();
     phimMoiData = JSON.parse(JSON.stringify(phimMoiData));
 
-    let phimChieuRapData = await db.collection("movie").find({"chieurap" : true}).limit(8).toArray(); // 28
+    let phimChieuRapData = await db.collection("movie").find({"chieurap" : true}).limit(8).toArray();
     phimChieuRapData = JSON.parse(JSON.stringify(phimChieuRapData));
 
-    let phimLeData = await db.collection("movie").find({"type" : "single" , "chieurap" : false }).limit(8).toArray(); // 1285
+    let phimLeData = await db.collection("movie").find({"type" : "single" , "chieurap" : false }).limit(8).toArray();
     phimLeData = JSON.parse(JSON.stringify(phimLeData));
 
-    let phimBoData = await db.collection("movie").find({"type" : "series" , "chieurap" : false }).limit(8).toArray(); // 741
+    let phimBoData = await db.collection("movie").find({"type" : "series" , "chieurap" : false }).limit(8).toArray();
     phimBoData = JSON.parse(JSON.stringify(phimBoData));
 
-    let phimHoatHinhData = await db.collection("movie").find({"type" : "hoathinh" , "chieurap" : false }).limit(8).toArray(); //256
+    let phimHoatHinhData = await db.collection("movie").find({"type" : "hoathinh" , "chieurap" : false }).limit(8).toArray();
     phimHoatHinhData = JSON.parse(JSON.stringify(phimHoatHinhData));
 
     return {
@@ -44,12 +45,15 @@ const HomePage = ({ phimMoiData , phimChieuRapData , phimLeData , phimBoData , p
 
             {/* ================================================== */}
             <div id="home">
+                <div id="carousel">
+                    <ThumbnailSlider/>
+                </div>
 
                 <div className="pb-8 border-b-2 border-li-border dark:border-da-border">
-                    <h1 className="page-title">
+                    <Link href='/phim-moi/1' className="page-title inline-block hover:text-li-primary dark:hover:text-da-primary">
                         PHIM MỚI CẬP NHẬT
-                    </h1>
-                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                    </Link>
+                    <div className="movies-grid">
                         {
                             phimMoiData.map((movieInfo, index) => {
                                 return (
@@ -75,10 +79,10 @@ const HomePage = ({ phimMoiData , phimChieuRapData , phimLeData , phimBoData , p
 
 
                 <div className="mt-5 pb-8 border-b-2 border-li-border dark:border-da-border">
-                    <h1 className="page-title">
+                    <Link href='/phim-chieu-rap/1' className="page-title inline-block hover:text-li-primary dark:hover:text-da-primary">
                         PHIM CHIẾU RẠP
-                    </h1>
-                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                    </Link>
+                    <div className="movies-grid">
                         {
                             phimChieuRapData.map((movieInfo, index) => {
                                 return (
@@ -104,10 +108,10 @@ const HomePage = ({ phimMoiData , phimChieuRapData , phimLeData , phimBoData , p
 
 
                 <div className="mt-5 pb-8 border-b-2 border-li-border dark:border-da-border">
-                    <h1 className="page-title">
+                    <Link href='/phim-le/1' className="page-title inline-block hover:text-li-primary dark:hover:text-da-primary">
                         PHIM LẺ
-                    </h1>
-                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                    </Link>
+                    <div className="movies-grid">
                         {
                             phimLeData.map((movieInfo, index) => {
                                 return (
@@ -133,10 +137,10 @@ const HomePage = ({ phimMoiData , phimChieuRapData , phimLeData , phimBoData , p
 
 
                 <div className="mt-5 pb-8 border-b-2 border-li-border dark:border-da-border">
-                    <h1 className="page-title">
+                    <Link href='/phim-bo/1' className="page-title inline-block hover:text-li-primary dark:hover:text-da-primary">
                         PHIM BỘ
-                    </h1>
-                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                    </Link>
+                    <div className="movies-grid">
                         {
                             phimBoData.map((movieInfo, index) => {
                                 return (
@@ -162,10 +166,10 @@ const HomePage = ({ phimMoiData , phimChieuRapData , phimLeData , phimBoData , p
 
 
                 <div className="mt-5 pb-8">
-                    <h1 className="page-title">
+                    <Link href='/hoat-hinh/1' className="page-title inline-block hover:text-li-primary dark:hover:text-da-primary">
                         PHIM HOẠT HÌNH
-                    </h1>
-                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                    </Link>
+                    <div className="movies-grid">
                         {
                             phimHoatHinhData.map((movieInfo, index) => {
                                 return (

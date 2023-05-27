@@ -96,7 +96,7 @@ const TimKiem = ({ movieData , queries }) => {
                     </Link>
                 </div>
 
-                <div className="mt-6 grid gap-4 grid-cols-2 md:grid-cols-4">
+                <div className="mt-6 movies-grid">
                     {
                         movieData.map((movieInfo, index) => {
                             return (

@@ -135,7 +135,7 @@ export default function Layout({ children }) {
                 <div className='page-container pb-16 lg:pb-10 flex flex-col lg:flex-row '>
 
                     {/* PAGE CONTAINER */}
-                    <main className='basis-3/4 p-4'>
+                    <main className='basis-3/4 px-5 py-4'>
                         {children}
                     </main>
 

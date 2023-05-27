@@ -3,6 +3,8 @@
 module.exports = {
 	darkMode: 'class',
 	content: [
+		'./node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
+		'./node_modules/flowbite/**/*.{js,jsx,ts,tsx}',
 		'./pages/**/*.{js,ts,jsx,tsx}',
 		'./components/**/*.{js,ts,jsx,tsx}',
 	],
@@ -32,8 +34,13 @@ module.exports = {
 				'da-subheading': '#9f9f9f',
 				'da-text': '#e2e8f0',
 				'da-primary': '#0ea5e9',
+			},
+			boxShadow: {
+				'inner-bottom': '0px -149px 65px -85px rgba(0,0,0,0.8) inset',
 			}
 		},
 	},
-	plugins: [],
+	plugins: [
+        require('flowbite/plugin')
+    ],
 }

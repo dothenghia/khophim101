@@ -58,12 +58,12 @@ const PhimHoatHinh = ({ movieData, page }) => {
             {/* ================================================== */}
             <div id="phimhoathinh">
 
-                <div className="mt-5">
+                <div className="mt-0">
                     <h1 className="page-title">
                         PHIM HOẠT HÌNH - Trang {page}
                     </h1>
 
-                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                    <div className="movies-grid">
                         {
                             movieData.map((movieInfo) => {
                                 return (

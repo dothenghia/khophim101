@@ -24,6 +24,10 @@
                border-li-primary dark:border-da-primary;
     }
 
+    .movies-grid {
+        @apply grid gap-5 grid-cols-2 md:grid-cols-4;
+    }
+
 
     /* ======= TEXT STYLE ======= */
 
@@ -57,7 +61,7 @@
 
     .header-text {
         @apply px-3 block lg:inline-block py-[10px] lg:pt-3 
-               text-lg font-medium
+               text-base font-normal
                text-li-heading dark:text-da-heading 
                hover:border-l-2 hover:text-li-primary dark:hover:text-da-primary
                hover:pl-[10px] lg:hover:pl-3 lg:hover:border-l-0

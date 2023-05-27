@@ -110,13 +110,17 @@
     - Optimize image
 
 ### 19/5 :
-    - Add data to 'Most View' Component (Fake Data)
+    - Add data to 'Most View' Component (Fixed Data)
 
 ### 20/5 :
-    - Search Origin_name and ko dấu
+    - Search for Origin_name
 
 ### 24/5 :
     - Update Data
+    - Create new Cluster, new username & password for database
+
+### 27/5 :
+    - Polishing HomePage
 
     - Polishing Movie Page :
         + Add subpage [tap] to [phim]
@@ -130,6 +134,5 @@
 - Blur Image when onLoad
 + Improve Fetching performance :
     ~ Solution 1 : getStaticProps , reformat database Document (Remove redundant information)
-+ Create new Cluster, new username & password for database
 
 ~ Redesign app (Netflix, Themoviedb)
