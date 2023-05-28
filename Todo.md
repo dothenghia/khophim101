@@ -122,6 +122,7 @@
 ### 27/5 :
     - Polishing HomePage
 
+### 28/5 :
     - Polishing Movie Page :
         + Add subpage [tap] to [phim]
             (the index.jsx of [phim] is the introduction page)
