@@ -5,8 +5,7 @@ import clientPromise from "../../lib/mongodb";
 import Layout from "../../components/Layout";
 import MovieCard from "../../components/MovieCard/MovieCard";
 
-// PHIM LẺ 1285
-// Total pages : 52
+// PHIM LẺ 
 
 export async function getServerSideProps(context) {
     const { page } = context.query
@@ -83,7 +82,7 @@ const PhimLe = ({ movieData, page }) => {
                 {/* Buttons switch page */}
                 <div>
                     <div className="mt-10 flex flex-row flex-wrap justify-center">
-                        {renderPageButtons(parseInt(page, 10), 171)}
+                        {renderPageButtons(parseInt(page, 10), 293)}
                     </div>
                 </div>
 

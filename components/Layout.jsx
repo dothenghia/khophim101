@@ -16,67 +16,67 @@ const mostViewData = [
         view: 331128
     },
     {
-        name: "Cầm Tù",
-        origin_name: "Esaret",
-        slug: "cam-tu",
-        thumb_url: "https://img.ophim1.com/uploads/movies/cam-tu-thumb.jpg",
-        view: 19195
+        name: "You Knock On My Door",
+        origin_name: "Sen Cal Kapimi",
+        slug: "you-knock-on-my-door",
+        thumb_url: "https://img.ophim1.com/uploads/movies/you-knock-on-my-door-thumb.jpg",
+        view: 98305
     },
     {
-        name: "Chim Bói Cá",
-        origin_name: "Yali Çapkini",
-        slug: "chim-boi-ca",
-        thumb_url: "https://img.ophim1.com/uploads/movies/chim-boi-ca-thumb.jpg",
-        view: 12867
+        name: "Mouse Kẻ Săn Người",
+        origin_name: "Mouse",
+        slug: "mouse-ke-san-nguoi",
+        thumb_url: "https://img.ophim1.com/uploads/movies/mouse-ke-san-nguoi-thumb.jpg",
+        view: 52830
     },
     {
-        name: "Ba chị em (Phần 2)",
-        origin_name: "Uc Kiz Kardes",
-        slug: "ba-chi-em-phan-2",
-        thumb_url: "https://img.ophim1.com/uploads/movies/ba-chi-em-phan-2-thumb.jpg",
-        view: 4378
+        name: "Love Logic Revenge",
+        origin_name: "Ask Mantik Intikam",
+        slug: "love-logic-revenge",
+        thumb_url: "https://img.ophim1.com/uploads/movies/love-logic-revenge-thumb.jpg",
+        view: 34060
     },
     {
         name: "Avatar 2: Dòng Chảy Của Nước",
         origin_name: "Avatar 2",
         slug: "avatar-2-dong-chay-cua-nuoc",
         thumb_url: "https://img.ophim1.com/uploads/movies/avatar-2-dong-chay-cua-nuoc-thumb.jpg",
-        view: 4113
+        view: 24113
     },
     {
-        name: "Phát Ngôn Viên Pháp Lý",
-        origin_name: "Speakers of Law",
-        slug: "phat-ngon-vien-phap-ly",
-        thumb_url: "https://img.ophim1.com/uploads/movies/phat-ngon-vien-phap-ly-thumb.jpg",
-        view: 3297
+        name: "Tiệm Cà Phê Luật",
+        origin_name: "The Law Cafe",
+        slug: "love-according-to-law",
+        thumb_url: "https://img.ophim1.com/uploads/movies/love-according-to-law-thumb.jpg",
+        view: 16552
     },
     {
         name: "Đảo Hải Tặc",
         origin_name: "One Piece (Luffy)",
         slug: "one-piece",
         thumb_url: "https://img.ophim1.com/uploads/movies/one-piece-thumb.jpg",
-        view: 3265
+        view: 13265
     },
     {
-        name: "Biệt Đội Tàng Hình",
-        origin_name: "The Invisibles",
-        slug: "biet-doi-tang-hinh",
-        thumb_url: "https://img.ophim1.com/uploads/movies/biet-doi-tang-hinh-thumb.jpg",
-        view: 3213
+        name: "Big Mouth",
+        origin_name: "Big Mouth",
+        slug: "big-mouth",
+        thumb_url: "https://img.ophim1.com/uploads/movies/big-mouth-thumb.jpg",
+        view: 13049
     },
     {
         name: "Goedam: Chuyện ma đô thị",
         origin_name: "Goedam",
         slug: "goedam-chuyen-ma-do-thi",
         thumb_url: "https://img.ophim1.com/uploads/movies/goedam-chuyen-ma-do-thi-thumb.jpg",
-        view: 3040
+        view: 13040
     },
     {
-        name: "Hoa Máu",
-        origin_name: "Kan Cicekleri",
-        slug: "hoa-mau",
-        thumb_url: "https://img.ophim1.com/uploads/movies/hoa-mau-thumb.jpg",
-        view: 2519
+        name: "Trầm Vụn Hương Phai",
+        origin_name: "Agarwood Like Crumbs",
+        slug: "tram-vun-huong-phai",
+        thumb_url: "https://img.ophim1.com/uploads/movies/tram-vun-huong-phai-thumb.jpg",
+        view: 10281
     }
 ]
 
