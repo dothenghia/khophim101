@@ -7,7 +7,7 @@ import ThumbnailSlider from "../components/ThumbnailSlider/ThumbnailSlider";
 import MovieCard from "../components/MovieCard/MovieCard";
 
 // Get data from MongoDB
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const client = await clientPromise;
     const db = client.db("movie-db");
 

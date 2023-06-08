@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Layout from "../../components/Layout";
 
@@ -40,7 +39,7 @@ function RenderInformationArray(array) {
 
 
 const Movie = ({ data }) => {
-    // console.log(data)
+    const [showMore, setShowMore] = useState(false)
     const movieInfo = data['movie']
     const episodes = data['episodes'][0]
 
@@ -87,8 +86,10 @@ const Movie = ({ data }) => {
                         </p>
                         <p className="body-text">Quốc gia : <span className="body-text-2">{movieInfo['country'][0]['name']}</span></p>
                         <p className="body-text">Năm sản xuất : <span className="body-text-2">{movieInfo['year']}</span></p>
-                        <p className="body-text">Nội dung :</p>
-                        <span className="body-text" dangerouslySetInnerHTML={{ __html: movieInfo['content'] }} />
+                        <p className="body-text">Nội dung :
+                            <p className={`body-text ${showMore ? '' : 'line-clamp-1'}`} dangerouslySetInnerHTML={{ __html: movieInfo['content'] }} />
+                            <button className="text-li-primary dark:text-da-primary underline underline-offset-2" onClick={() => {setShowMore(!showMore)}}>{showMore ? 'Ẩn bớt' : 'Xem thêm'}</button>
+                        </p>
                     </div>
                 </div>
 
